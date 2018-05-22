@@ -10,7 +10,10 @@ body {
     /* Relative/Fixed: Fixed makes the header stay in the same location on the screen regardless of scrolling. */
     position: fixed;
     top: 0px;
+    height: 80px;
     background: linear-gradient(to bottom, #434343, #575757 50%, #434343 75%, #323232 84%, #212121 98%, #111);
+    color: blue;
+    display: table;
 }
 
 .header.dark {
@@ -19,6 +22,29 @@ body {
 
 .background {
     background: linear-gradient(to bottom, #434343, #575757 20%, #575757 80%, #434343);
+}
+
+.header span {
+    transition: box-shadow .3s ease;
+    transition: text-shadow .3s ease;
+    background-color: transparent;
+    cursor: pointer;
+    display: table-cell;
+    font-family: 'Acme', monospace, cursive;
+    font-size: 3.70vh;
+    font-weight: 400;
+    height: auto;
+    letter-spacing: .03em;
+    padding-bottom: 2.19vh;
+    padding-top: 1.4vh;
+    text-align: center;
+    width: auto;
+    word-spacing: .07em;
+}
+
+.header span:hover {
+    box-shadow: 0 0 5px 5px #151515;
+    text-shadow: 0 0 15px blue;
 }
 
 .spacing {
