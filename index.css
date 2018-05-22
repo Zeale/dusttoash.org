@@ -46,6 +46,23 @@ body {
     text-shadow: 0 0 15px blue;
 }
 
+@media not screen and (pointer: fine) {
+
+    .header span:hover {
+        text-shadow: 0 0 15px red;
+    }
+
+    .header {
+        color: red;
+    }
+
+    .header span {
+        /* Makes text look like it's a cutout piece of paper above the stuff it's on top of. This can be seen easiest when zooming in very close on iPhone. */
+        text-shadow: 0 0 1px black;
+    }
+
+}
+
 .spacing {
     background-color: transparent;
 }
