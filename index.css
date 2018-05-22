@@ -1,8 +1,13 @@
 body {
     margin: 0;
+
+    /* Size of the header */
+    margin-top: 80px;
+    height: 3000;
 }
 
 .header {
+    /* Relative/Fixed: Fixed makes the header stay in the same location on the screen regardless of scrolling. */
     position: fixed;
     top: 0px;
     background: linear-gradient(to bottom, #434343, #575757 50%, #434343 75%, #323232 84%, #212121 98%, #111);
@@ -10,11 +15,6 @@ body {
 
 .header.dark {
     background: linear-gradient(to bottom, #353535, #484848 50%, #353535 75%, #2A2A2A 84%, #111 98%, black);
-}
-
-.content-root {
-    /* To space the body underneath the navigation header */
-    margin-top: 0;
 }
 
 .background {
