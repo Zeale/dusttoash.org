@@ -1,3 +1,30 @@
+body {
+    margin: 0;
+}
+
 .header {
-    position: absolute;
+    position: fixed;
+    top: 0px;
+    background: linear-gradient(to bottom, #434343, #575757 50%, #434343 75%, #323232 84%, #212121 98%, #111);
+}
+
+.header.dark {
+    background: linear-gradient(to bottom, #353535, #484848 50%, #353535 75%, #2A2A2A 84%, #111 98%, black);
+}
+
+.content-root {
+    /* To space the body underneath the navigation header */
+    margin-top: 0;
+}
+
+.background {
+    background: linear-gradient(to bottom, #434343, #575757 20%, #575757 80%, #434343);
+}
+
+.spacing {
+    background-color: transparent;
+}
+
+.full-width {
+    width: 100%;
 }
