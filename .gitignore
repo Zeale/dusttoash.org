@@ -40,3 +40,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+### Website Related Things ###
+Unnamed/
+chat-room/
+*.private
+*.password
+_*_protected/
+_*_prot/
+/!personal/
