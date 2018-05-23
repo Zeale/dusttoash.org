@@ -70,3 +70,33 @@ body {
 .full-width {
     width: 100%;
 }
+
+
+footer {
+    position: fixed;
+    min-height: 100px;
+    bottom: 0;
+    width: 100%;
+
+    border-top: 2px dashed #333;
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+}
+
+#FooterTitle {
+    float: left;
+    font-size: 24px;
+    padding-right: 5px;
+    margin-right: 15px;
+    margin-bottom: 0;
+    border: 0 dashed #333;
+    border-width: 0 2px 2px 0;
+}
+
+@media not screen and (pointer: fine) {
+    footer {
+        min-height: 20px;
+    }
+}

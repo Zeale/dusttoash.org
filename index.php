@@ -21,6 +21,15 @@
     </div>
 
     <div class="content-root"></div>
+
+    <footer>
+        <span id="FooterTitle">
+            <strong>
+                Dust To Ash
+            </strong>
+        </span> Footer Text
+        <a style="font-size: 16px; display: block;" href="http://github.com/Zeale"></a>
+    </footer>
 </body>
 
 </html>
