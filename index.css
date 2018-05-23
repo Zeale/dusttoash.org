@@ -13,6 +13,7 @@ body {
     background: linear-gradient(to bottom, #434343, #575757 50%, #434343 75%, #323232 84%, #212121 98%, #111);
     color: blue;
     display: table;
+    box-shadow: 0 0 4px black;
 }
 
 .header.dark {
@@ -70,18 +71,39 @@ body {
     width: 100%;
 }
 
+.content-root {
+    margin: 5%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    min-height: 78%;
+
+    transition: border-color .3s ease;
+    border: 2px solid black;
+
+    color: lightgray;
+    font-size: 18;
+    font-family: monospace, sans-serif;
+    font-weight: 600;
+}
+
+.content-root:hover {
+    border-color: gray;
+}
+
 
 footer {
     position: fixed;
-    min-height: 100px;
+    min-height: 80px;
     bottom: 0;
     width: 100%;
 
-    border-top: 2px dashed #333;
+    border-top: 2px solid black;
     color: white;
     font-family: monospace;
     font-size: 20px;
     text-align: center;
+
+    background-color: gray;
 }
 
 #FooterTitle {
@@ -90,7 +112,7 @@ footer {
     padding-right: 5px;
     margin-right: 15px;
     margin-bottom: 0;
-    border: 0 dashed #333;
+    border: 0 solid black;
     border-width: 0 2px 2px 0;
 }
 
