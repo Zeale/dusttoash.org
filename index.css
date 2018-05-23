@@ -44,7 +44,9 @@ body {
     text-shadow: 0 0 15px blue;
 }
 
-@media not (pointer: fine) {
+/* Forgot that media type was required when using not or only */
+
+@media not screen and (pointer: fine) {
 
     .header span:hover {
         text-shadow: 0 0 15px red;
