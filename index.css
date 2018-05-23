@@ -30,11 +30,11 @@ body {
     cursor: pointer;
     display: table-cell;
     font-family: 'Acme', monospace, cursive;
-    font-size: 3.70vh;
+    font-size: 3.3vh;
     font-weight: 400;
     letter-spacing: .03em;
-    padding-bottom: 1.4vh;
-    padding-top: 1.4vh;
+    padding-bottom: 1.5vh;
+    padding-top: 1.5vh;
     text-align: center;
     word-spacing: .07em;
 }
@@ -73,9 +73,8 @@ body {
 
 .content-root {
     margin: 5%;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    min-height: 78%;
+    margin-top: 10vh;
+    min-height: 78vh;
 
     transition: border-color .3s ease;
     border: 2px solid black;
@@ -90,10 +89,9 @@ body {
     border-color: gray;
 }
 
-
 footer {
     position: fixed;
-    min-height: 80px;
+    min-height: 8vh;
     bottom: 0;
     width: 100%;
 
@@ -116,8 +114,13 @@ footer {
     border-width: 0 2px 2px 0;
 }
 
-@media not screen and (pointer: fine) {
-    footer {
-        min-height: 20px;
+
+/* Targets iPhones 6, 7, and 8 Plus (and only those screen sizes, if comments are applied). */
+
+/* and (min-device-width: 414px) and (min-device-height: 736px) */
+
+@media (max-device-width: 414px) and (max-device-height: 736px) {
+    .content-root {
+        min-height: 68vh;
     }
 }
