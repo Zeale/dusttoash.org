@@ -32,12 +32,10 @@ body {
     font-family: 'Acme', monospace, cursive;
     font-size: 3.70vh;
     font-weight: 400;
-    height: auto;
     letter-spacing: .03em;
     padding-bottom: 1.4vh;
     padding-top: 1.4vh;
     text-align: center;
-    width: auto;
     word-spacing: .07em;
 }
 
