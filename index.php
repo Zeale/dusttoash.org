@@ -20,7 +20,9 @@
         <span>Test</span>
     </div>
 
-    <div class="content-root"></div>
+    <div class="content-root">
+        Some testing content
+    </div>
 
     <footer>
         <span id="FooterTitle">
