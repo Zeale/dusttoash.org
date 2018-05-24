@@ -113,11 +113,10 @@ body {
 .anchor {
     display: inline-block;
     font-family: monospace;
-    font-size: 0.4em;
+    font-size: 0.6em;
     font-weight: 600;
     color: #43434340;
-    /* -0.3em is added to move back up a distance of half of the space not taken up by the text. This is combined with a -0.2em to shift this text upwards by half its height (the 0.2em) so that its *center* is now at the level we want it to be at (and that is: vertically centered with the header that encapsulates it). This is the default styling and size for an anchor. */
-    transform: translateY(-0.5em);
+    transform: translateY(-0.2em);
 }
 
 footer {
