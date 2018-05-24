@@ -1,7 +1,18 @@
 :root {
     /* Color variables */
-    --primary-color: deepskyblue;
-    --secondary-color: #ff5630;
+    --soft-red: #ff5630;
+    --soft-blue: deepskyblue;
+    --soft-green: #35b746;
+    --soft-gold: #edc410;
+
+
+    /* 
+     * These values may get changed in the document that imports this css code. The "soft-*color*" values should remain, however. 
+     * 
+     * The primary color is what color basic text and the header's items appear as.
+     */
+    --primary-color: var(--soft-blue);
+    --secondary-color: var(--soft-red);
 }
 
 body {
