@@ -15,9 +15,6 @@
 
         <span>Test</span>
         <span>Test</span>
-        <span>Test</span>
-        <span>Test</span>
-        <span>Test</span>
     </div>
 
     <div class="content-root">
