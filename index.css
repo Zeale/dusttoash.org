@@ -79,10 +79,17 @@ body {
     transition: border-color .3s ease;
     border: 2px solid black;
 
-    color: lightgray;
+    color: deepskyblue;
     font-size: 18;
     font-family: monospace, sans-serif;
     font-weight: 600;
+}
+
+.content-root h1,
+.content-root h2,
+.content-root h3 {
+    color: #ff5630;
+    text-align: center;
 }
 
 .content-root:hover {

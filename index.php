@@ -21,7 +21,8 @@
     </div>
 
     <div class="content-root">
-        Some testing content
+        <h1 class="heading">Message</h1>
+        Some regular content text; this text appears a deep, sky blue, while headers, like <span style="color: #ff5630;">Message</span> appear a <span style="color: #ff5630;">coral-like color</span>.
     </div>
 
     <footer>
