@@ -19,7 +19,7 @@
 
     <div class="content-root">
         <h1 class="heading">Content Text</h1>
-        Some regular content text; this text appears a deep, sky blue, while headers, like <span style="color: var(--secondary-color);">Message</span> appear a <span style="color: var(--secondary-color);">coral-like color</span>.
+        Some regular content text; this text appears a deep, sky blue, while headers, like <span style="color: var(--secondary-color);">Message</span>, appear a <span style="color: var(--secondary-color);">coral-like color</span>.
     </div>
 
     <footer>

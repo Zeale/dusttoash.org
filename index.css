@@ -135,10 +135,7 @@ footer {
     border-width: 0 2px 2px 0;
 }
 
-
-
-
-/* Targets iPhones 6, 7, and 8 Plus (and only those screen sizes, if comments are applied). */
+/* Targets iPhones 6, 7, and 8 Plus (and *only* those screen sizes, if comments are applied). */
 
 /* and (min-device-width: 414px) and (min-device-height: 736px) */
 
