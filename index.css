@@ -92,6 +92,8 @@ body {
     margin: 5%;
     margin-top: 10vh;
     min-height: 78vh;
+    padding-left: 10px;
+    padding-right: 10px;
 
     border: 2px solid black;
 
