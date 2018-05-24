@@ -29,7 +29,8 @@
                 Dust To Ash
             </strong>
         </span> Footer Text
-        <a style="font-size: 16px; display: block;" href="http://github.com/Zeale"></a>
+
+        <a id="CopyrightNotice" style="display: block;" href="/copyright-info"><span>Copyrights belong to Zeale.</span> <span style="color: blue;">More Info.</span></a>
     </footer>
 </body>
 
