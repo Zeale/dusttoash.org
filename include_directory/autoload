@@ -6,5 +6,5 @@ spl_autoload_register(function ($class_name) {
 });
 
 // Include library files below
-include "pages/top.php";
-include "pages/bottom.php"; ?>
+include "templates/top.php";
+include "templates/bottom.php"; ?>
