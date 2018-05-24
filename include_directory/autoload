@@ -1,0 +1,10 @@
+<?php 
+
+// From PHP's website
+spl_autoload_register(function ($class_name) {
+    include $class_name . '.php';
+});
+
+// Include library files below
+include "pages/top.php";
+include "pages/bottom.php"; ?>
