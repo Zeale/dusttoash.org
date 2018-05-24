@@ -13,8 +13,9 @@
     <div class="header full-width" id="Header">
         <!-- This is the navigation header -->
 
-        <span>Test</span>
-        <span>Test</span>
+        <span onclick="document.location.href='/'">Home</span>
+        <span onclick="document.location.href='/login'">Login</span>
+        <span onclick="document.location.href='/about'">About</span>
     </div>
 
     <div class="content-root">

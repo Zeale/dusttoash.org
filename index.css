@@ -47,13 +47,13 @@ body {
     cursor: pointer;
     display: table-cell;
     font-family: 'Acme', monospace, cursive;
-    font-size: 3.3vh;
+    font-size: 4vh;
     font-weight: 400;
     letter-spacing: .03em;
     padding-bottom: 1.5vh;
     padding-top: 1.5vh;
     text-align: center;
-    word-spacing: .07em;
+    word-spacing: .11em;
 }
 
 .header span:hover {
@@ -161,6 +161,14 @@ footer {
 @media (max-device-width: 414px) and (max-device-height: 736px) {
     .content-root {
         min-height: 68vh;
+    }
+}
+
+@media (orientation: landscape) and (max-device-width: 414px) and (max-device-height: 736px) {
+    .header span {
+        padding-top: 0.5vh;
+        padding-bottom: 0.5vh;
+        font-size: 3em;
     }
 }
 
