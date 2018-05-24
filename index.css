@@ -111,12 +111,22 @@ body {
 }
 
 .anchor {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
     display: inline-block;
     font-family: monospace;
     font-size: 0.6em;
     font-weight: 600;
     color: #43434340;
+    margin-left: 0.15em;
     transform: translateY(-0.2em);
+    /* Remove Underline */
+    text-decoration: none;
+}
+
+.anchor:hover {
+    color: #2b2b2b;
+    text-shadow: 0 0 10px #2a2a2a;
+    cursor: pointer;
 }
 
 footer {
