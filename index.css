@@ -1,3 +1,9 @@
+:root {
+    /* Color variables */
+    --primary-color: deepskyblue;
+    --secondary-color: #ff5630;
+}
+
 body {
     margin: 0;
 
@@ -11,7 +17,7 @@ body {
     top: 0px;
     height: 80px;
     background: linear-gradient(to bottom, #434343, #575757 50%, #434343 75%, #323232 84%, #212121 98%, #111);
-    color: blue;
+    color: var(--primary-color);
     display: table;
     box-shadow: 0 0 4px black;
 }
@@ -41,7 +47,7 @@ body {
 
 .header span:hover {
     box-shadow: 0 0 5px 5px #151515;
-    text-shadow: 0 0 15px blue;
+    text-shadow: 0 0 15px var(--primary-color);
 }
 
 /* Forgot that media type was required when using not or only */
@@ -49,11 +55,11 @@ body {
 @media not screen and (pointer: fine) {
 
     .header span:hover {
-        text-shadow: 0 0 15px red;
+        text-shadow: 0 0 15px var(--secondary-color);
     }
 
     .header {
-        color: red;
+        color: var(--secondary-color);
     }
 
     .header span {
@@ -76,10 +82,9 @@ body {
     margin-top: 10vh;
     min-height: 78vh;
 
-    transition: border-color .3s ease;
     border: 2px solid black;
 
-    color: deepskyblue;
+    color: var(--primary-color);
     font-size: 18;
     font-family: monospace, sans-serif;
     font-weight: 600;
@@ -88,12 +93,8 @@ body {
 .content-root h1,
 .content-root h2,
 .content-root h3 {
-    color: #ff5630;
+    color: var(--secondary-color);
     text-align: center;
-}
-
-.content-root:hover {
-    border-color: gray;
 }
 
 footer {
@@ -120,6 +121,8 @@ footer {
     border: 0 solid black;
     border-width: 0 2px 2px 0;
 }
+
+
 
 
 /* Targets iPhones 6, 7, and 8 Plus (and only those screen sizes, if comments are applied). */
