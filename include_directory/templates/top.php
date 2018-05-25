@@ -15,8 +15,11 @@ class HeaderItem {
 
 }
 
+// I'll deal with namespaces and stuff later.
+$defaultHeaderItems = array(new HeaderItem("Home","/"), new HeaderItem("Login","/login"),new HeaderItem("About","/about"));
+
 ?>
-<?php function t($centerContent=true, HeaderItem ...$headings) { ?>
+<?php function t(bool $centerContent=null, bool $includeDefaults=null, HeaderItem ...$headings) { ?>
 <html lang="en">
 
 <head>
@@ -31,7 +34,7 @@ class HeaderItem {
 <body class="background">
     <div class="header full-width" id="Header">
         <!-- This is the navigation header -->
-<?php if(count($headings)==0):?>
+<?php if(count($headings)==0 || $includeDefaults):?>
         <span onclick="document.location.href='/'">Home</span>
         <span onclick="document.location.href='/login'">Login</span>
         <span onclick="document.location.href='/about'">About</span>

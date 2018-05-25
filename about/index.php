@@ -1,5 +1,5 @@
 <?php include "autoload"; ?>
-<?php t( true, new HeaderItem("Potato", "/")); ?>
+<?php t(true); ?>
 
 <?php heading("About"); ?>
 This website is, <em style="color: var(--secondary-color);">(currently)</em>, basically a styled, human readable repository for programs.<br><br>
