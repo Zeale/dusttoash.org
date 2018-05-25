@@ -107,7 +107,17 @@ body {
 .content-root h2,
 .content-root h3 {
     color: var(--secondary-color);
+}
+
+.content-root h1,
+.content-root h2,
+.content-root h3,
+.centered {
     text-align: center;
+}
+
+span.centered {
+    display: inline-block;
 }
 
 .anchor {
