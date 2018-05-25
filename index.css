@@ -177,7 +177,7 @@ footer {
     }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-device-width: 1400px) {
     .header span {
         font-size: 8vh;
     }
