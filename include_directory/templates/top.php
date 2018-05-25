@@ -1,4 +1,4 @@
-<?php function t() { ?>
+<?php function t($centerContent=true) { ?>
 <html lang="en">
 
 <head>
@@ -19,5 +19,5 @@
         <span onclick="document.location.href='/about'">About</span>
     </div>
 
-    <div class="content-root">
+    <div class="content-root<?php if($centerContent)echo " centered"; ?>">
         <?php } ?>

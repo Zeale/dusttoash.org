@@ -106,6 +106,7 @@ body {
 .content-root h1,
 .content-root h2,
 .content-root h3 {
+    padding-top: 20px;
     color: var(--secondary-color);
 }
 
@@ -116,7 +117,7 @@ body {
     text-align: center;
 }
 
-span.centered {
+span.centered, .content-root.centered span, .content-root.centered div {
     /* Will force span to be full width. */
     width: 100%;
     display: inline-block;
