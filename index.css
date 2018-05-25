@@ -177,11 +177,23 @@ footer {
     }
 }
 
+@media (orientation: landscape) {
+    .header span {
+        font-size: 8vh;
+    }
+}
+
 @media (orientation: landscape) and (max-device-width: 414px) and (max-device-height: 736px) {
     .header span {
         padding-top: 0.5vh;
         padding-bottom: 0.5vh;
         font-size: 3em;
+    }
+}
+
+@media (max-width: 1366px) and (max-height: 768px) {
+    .header span {
+        font-size: 7vh;
     }
 }
 
