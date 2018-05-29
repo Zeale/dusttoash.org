@@ -206,3 +206,9 @@ footer {
     right: 0;
     bottom: 0;
 }
+
+.block-quote {
+    color: gray;
+    padding-bottom: 0.15em;
+    background-color: rgba(255, 255, 255, 0.05);
+}
