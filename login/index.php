@@ -1,4 +1,3 @@
-<?php include "autoload"; ?>
 <?php t(); ?> 
 <?php heading("Login", "Login"); ?>
 
