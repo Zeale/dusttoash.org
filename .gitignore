@@ -42,10 +42,11 @@ $RECYCLE.BIN/
 *.lnk
 
 ### Website Related Things ###
-Unnamed/
-chat-room/
+/Unnamed/
+/chat-room/
 *.private
-*.password
+/private/
+_private/
 _*_protected/
 _*_prot/
 /!personal/
