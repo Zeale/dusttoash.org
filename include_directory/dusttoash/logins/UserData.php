@@ -1,6 +1,6 @@
 <?php
 
-namespace logins;
+namespace dusttoash\logins;
 
 class UserData {
 	private const COOKIE_USERNAME = "dta_username";
