@@ -2,7 +2,7 @@
 
 namespace dusttoash\logins;
 
-class UserData {
+class Database {
 	private const COOKIE_USERNAME = "dta_username";
 	private const COOKIE_SESSION_ID = "dta_session_id";
 	
@@ -36,18 +36,18 @@ class UserData {
 		$username = $_COOKIE [COOKIE_USERNAME];
 		$sessionID = $_COOKIE [COOKIE_SESSION_ID];
 		
-		
-		
-		// TODO Check login information.
+		// Inside those parantheses, we're creating a new Query (to return any users that have the same sessionID and username as the client has in their cookies). We then run this query, and get an associative array as the result. self::$loggedIn is given the array, evaluated into a boolean (so false if it's empty meaning there is no user with a matching username and sessionID, or true otherwise). We return the result of this assignment to self::$loggedIn, so whether or not the user is logged in.
+		return self::$loggedIn = (new \dusttoash\connections\Query ( "SELECT id FROM users WHERE username=:username, session_id=:sessionID", NULL, NULL, NULL, new \dusttoash\connections\Query\Pair ( "username", $username ), new \dusttoash\connections\Query\Pair ( "sessionID", $sessionID ) ))->fetch ();
 	}
 	
 	/*
 	 * Adds a new user to the database, given login information. This method also sets cookies accordingly (logs in locally) and returns true upon success. If an error is encountered, the error message, as a string, is returned.
 	 */
+	// This method will be removed. Any page implementing the functionality of this method will do so itself, since there are many possible results of calling this method. For example, the username could already exist. So could the email. The user will need to be notified about each conflicting value they enter when making an account, so all this crap is best placed in the Sign Up page. (Other pages are still free to implement their own sign up crap for whatever reasons they have.)
 	public function createNewUser(string $username, string $email, string $password) {
 		try {
 			$usernameCheck = new \dusttoash\connections\Query ( "SELECT username FROM users WHERE username=:username LIMIT 1", NULL, NULL, NULL, new \dusttoash\connections\Query\Pair ( "username", $username ) );
-			echo $usernameCheck->fetch()?"That username already exists":"That username is not taken! :D";
+			echo $usernameCheck->fetch () ? "That username already exists" : "That username is not taken! :D";
 			exit ();
 			// Generate a sessionID.
 			$sessionID = random_int ( PHP_INT_MIN, PHP_INT_MAX );
