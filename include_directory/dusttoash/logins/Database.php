@@ -11,30 +11,30 @@ class Database {
 	
 	// True if the client has some, but not all, of the cookies that are used to determine whether or not the client is logged in, set. False otherwise.
 	private static $halfLoggedIn;
-	public static function isHalfLoggedIn() {
+	public function isHalfLoggedIn() {
 		if (isset ( self::$halfLoggedIn ))
 			return self::$halfLoggedIn;
 		self::isLoggedIn ();
 		return self::$halfLoggedIn;
 	}
-	public static function isLoggedIn() {
+	public function isLoggedIn() {
 		if (isset ( self::$loggedIn ))
 			return self::$loggedIn;
 		
-		if (! (isset ( $_COOKIE [COOKIE_USERNAME] ) and isset ( $_COOKIE [COOKIE_SESSION_ID] ))) {
+		if (! (isset ( $_COOKIE [self::COOKIE_USERNAME] ) and isset ( $_COOKIE [self::COOKIE_SESSION_ID] ))) {
 			// This if block checks to see if the user is lacking any of the cookies that are used to determine if they're logged in. If the user only has one of the two cookies (e.g. they have a username cookie but no sessionID), then the below call to 'logoutLocally' will remove the single cookie.
 			// The user should not have only one of the two login cookies set, however, the user can edit their own cookies (I have a chrome plugin that lets me do so, for example), so we try to fix this ASAP.
-			self::$halfLoggedIn = isset ( $_COOKIE [COOKIE_USERNAME] ) or isset ( $_COOKIE [COOKIE_SESSION_ID] );
+			self::$halfLoggedIn = isset ( $_COOKIE [self::COOKIE_USERNAME] ) or isset ( $_COOKIE [self::COOKIE_SESSION_ID] );
 			
 			// If neither cookies are set, this still gets called. All it does is unset cookies though, so it's ok.
-			logoutLocally ();
+			self::logoutLocally ();
 			return self::$loggedIn = false;
 		}
 		
 		self::$halfLoggedIn = false;
 		
-		$username = $_COOKIE [COOKIE_USERNAME];
-		$sessionID = $_COOKIE [COOKIE_SESSION_ID];
+		$username = $_COOKIE [self::COOKIE_USERNAME];
+		$sessionID = $_COOKIE [self::COOKIE_SESSION_ID];
 		
 		// Inside those parantheses, we're creating a new Query (to return any users that have the same sessionID and username as the client has in their cookies). We then run this query, and get an associative array as the result. self::$loggedIn is given the array, evaluated into a boolean (so false if it's empty meaning there is no user with a matching username and sessionID, or true otherwise). We return the result of this assignment to self::$loggedIn, so whether or not the user is logged in.
 		return self::$loggedIn = (new \dusttoash\connections\Query ( "SELECT id FROM users WHERE username=:username, session_id=:sessionID", NULL, NULL, NULL, new \dusttoash\connections\Query\Pair ( "username", $username ), new \dusttoash\connections\Query\Pair ( "sessionID", $sessionID ) ))->fetch ();
@@ -64,12 +64,12 @@ VALUES (:username, :email, :password, $sessionID)" );
 		}
 		$connection = null;
 	}
-	private function loginLocally(string $username, int $sessionID) {
-		setcookie ( COOKIE_USERNAME, $username, 0, "/" );
-		setcookie ( COOKIE_SESSION_ID, $sessionID, 0, "/" );
+	private static function loginLocally(string $username, int $sessionID) {
+		setcookie ( self::COOKIE_USERNAME, $username, 0, "/" );
+		setcookie ( self::COOKIE_SESSION_ID, $sessionID, 0, "/" );
 	}
-	private function logoutLocally() {
-		setcookie ( COOKIE_USERNAME, FALSE, time () - 1, "/" );
-		setcookie ( COOKIE_SESSION_ID, FALSE, time () - 1, "/" );
+	private static function logoutLocally() {
+		setcookie ( self::COOKIE_USERNAME, FALSE, time () - 1, "/" );
+		setcookie ( self::COOKIE_SESSION_ID, FALSE, time () - 1, "/" );
 	}
 }
