@@ -11,11 +11,13 @@ class UserData {
 	
 	// True if the client has some, but not all, of the cookies that are used to determine whether or not the client is logged in, set. False otherwise.
 	private static $halfLoggedIn;
-	private static function isHalfLoggedIn() {
+	public static function isHalfLoggedIn() {
 		if (isset ( self::$halfLoggedIn ))
 			return self::$halfLoggedIn;
+		self::isLoggedIn();
+		return self::$halfLoggedIn;
 	}
-	private static function isLoggedIn() {
+	public static function isLoggedIn() {
 		if (isset ( self::$loggedIn ))
 			return self::$loggedIn;
 		
@@ -33,6 +35,8 @@ class UserData {
 		
 		$username = $_COOKIE [COOKIE_USERNAME];
 		$sessionID = $_COOKIE [COOKIE_SESSION_ID];
+		
+		
 		
 		// TODO Check login information.
 	}
@@ -78,4 +82,3 @@ VALUES (:username, :email, :password, $sessionID)" );
 		setcookie ( COOKIE_SESSION_ID, FALSE, time () - 1, "/" );
 	}
 }
-?>
