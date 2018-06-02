@@ -14,7 +14,7 @@ class UserData {
 	public static function isHalfLoggedIn() {
 		if (isset ( self::$halfLoggedIn ))
 			return self::$halfLoggedIn;
-		self::isLoggedIn();
+		self::isLoggedIn ();
 		return self::$halfLoggedIn;
 	}
 	public static function isLoggedIn() {
@@ -45,24 +45,15 @@ class UserData {
 	 * Adds a new user to the database, given login information. This method also sets cookies accordingly (logs in locally) and returns true upon success. If an error is encountered, the error message, as a string, is returned.
 	 */
 	public function createNewUser(string $username, string $email, string $password) {
-		$server = 'localhost';
-		$database_username = 'root';
-		$file = fopen ( $_SERVER ['DOCUMENT_ROOT'] . '/private/database_login', 'r' );
-		$database_password = fgets ( $file ); // Read database login password from hidden file.
-		fclose ( $file );
 		try {
-			$connection = new PDO ( "mysql:host=$server;dbname=dusttoash", $database_username, $database_password );
-			$connection->setAttribute ( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+			$usernameCheck = new \dusttoash\connections\Query ( "SELECT username FROM users WHERE username=:username LIMIT 1", NULL, NULL, NULL, new \dusttoash\connections\Query\Pair ( "username", $username ) );
+			echo $usernameCheck->fetch()?"That username already exists":"That username is not taken! :D";
+			exit ();
 			// Generate a sessionID.
 			$sessionID = random_int ( PHP_INT_MIN, PHP_INT_MAX );
 			// Here we'll use a prepared statement to prevent injection and stuff.
 			$query = $connection->prepare ( "INSERT INTO users (username, email, password, sessionID)
 VALUES (:username, :email, :password, $sessionID)" );
-			$connection->bindParam ( ':username', $username );
-			$connection->bindParam ( ':email', $email );
-			$connection->bindParam ( ':password', $password );
-			// bindParam takes references to our bound variables. These can be set below which will change what is placed into the database when $query is executed.
-			$query->execute ();
 			
 			// Login locally (on the client's browser).
 			loginLocally ( $username, $sessionID );

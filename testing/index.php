@@ -1,5 +1,5 @@
 <?php 
 t(true);
-$query = new dusttoash\connections\Query('SELECT * FROM users');
-$query->fetch();
+$data = new dusttoash\logins\UserData;
+$data->createNewUser("Zeale", "cookie@dusttoash.org", "TestPass");
 b();
