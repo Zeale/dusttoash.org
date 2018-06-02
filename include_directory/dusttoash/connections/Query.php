@@ -4,7 +4,7 @@ namespace dusttoash\connections\Query;
 
 class Pair {
 	private $binding, $value;
-	public function __construct(string $binding = NULL, mixed &$value) {
+	public function __construct(string $binding = NULL, &$value) {
 		if ($binding != NULL)
 			$this->binding = $binding;
 		if ($value != NULL)
