@@ -119,13 +119,21 @@ body {
 }
 
 /* PHP's var dump stuff */
-.content-root .xdebug-var-dump {
+.content-root pre.xdebug-var-dump, .content-root pre.code-output {
     border-style: solid;
     border-width: 1.8px;
     border-radius: 4px;
+    background: linear-gradient(to bottom, #292929, #202020 20%, #202020 80%, #292929);
+}
+
+.content-root pre.xdebug-var-dump {
     border-color: lime;
     color: lime;
-    background: linear-gradient(to bottom, #292929, #202020 20%, #202020 80%, #292929);
+}
+
+.content-root pre.code-output {
+    border-color: gold;
+    color: gold;
 }
 
 span.centered, .content-root.centered span, .content-root.centered div {
