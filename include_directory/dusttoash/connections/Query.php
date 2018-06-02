@@ -38,7 +38,11 @@ class Query {
 		}
 	}
 	private $query;
-	public function __construct(string $query, string $server_address = self::DEFAULT_SERVER_ADDRESS, string $database_username = self::DEFAULT_DATABASE_USERNAME, string $database_password = NULL, dusttoash\connections\Query\Pair ...$bindings) {
+	public function __construct(string $query, string $server_address = NULL, string $database_username = NULL, string $database_password = NULL, Query\Pair ...$bindings) {
+		if ($server_address == NULL)
+			$server_address = self::DEFAULT_SERVER_ADDRESS;
+		if ($database_username == NULL)
+			$database_username = self::DEFAULT_DATABASE_USERNAME;
 		if ($database_password == NULL) {
 			self::setDefaultDatabasePassword ();
 			$database_password = self::$database_password;
@@ -53,7 +57,7 @@ class Query {
 		}
 		unset ( $pair );
 	}
-	public function execute(dusttoash\connections\Query\Pair ...$bindings) {
+	public function execute(Query\Pair ...$bindings) {
 		foreach ( $bindings as $pair ) {
 			$this->query->bindParam ( $pair->getBinding (), $pair->getValue () );
 		}
@@ -62,10 +66,9 @@ class Query {
 	}
 	
 	// Executes query then fetches data.
-	public function fetch(dusttoash\connections\Query\Pair ...$bindings) {
-		$this->execute ();
+	public function fetch(Query\Pair ...$bindings) {
+		$this->execute ( ...$bindings );
 		$this->query->setFetchMode ( PDO::FETCH_ASSOC );
-        return $this->query->fetchAll();
-		
+		return $this->query->fetchAll ();
 	}
 }
