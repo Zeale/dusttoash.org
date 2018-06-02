@@ -101,6 +101,7 @@ body {
     font-size: 18;
     font-family: monospace, sans-serif;
     font-weight: 600;
+    word-wrap: break-word;
 }
 
 .content-root h1,
