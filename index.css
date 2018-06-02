@@ -4,7 +4,11 @@
     --soft-blue: deepskyblue;
     --soft-green: #35b746;
     --soft-gold: #edc410;
-
+    
+    --hard-red: #d00;
+    --hard-blue: #00d;
+    --hard-green: #0d0;
+    --hard-gold: #0dd;
 
     /* 
      * These values may get changed in the document that imports this css code. The "soft-*color*" values should remain, however. 
