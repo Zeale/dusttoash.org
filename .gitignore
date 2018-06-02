@@ -50,3 +50,11 @@ _private/
 _*_protected/
 _*_prot/
 /!personal/
+
+### Eclipse PHP Project Crap ###
+# I have a PHP Project or two in random places that are inaccessible via website.
+# These may get removed later. Maybe...
+
+.settings/
+.project
+.buildpath
