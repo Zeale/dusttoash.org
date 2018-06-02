@@ -23,7 +23,6 @@ class Pair {
 
 namespace dusttoash\connections;
 
-// This line is the bane of my existence.
 use PDO;
 
 class Query {
@@ -65,10 +64,8 @@ class Query {
 	// Executes query then fetches data.
 	public function fetch(dusttoash\connections\Query\Pair ...$bindings) {
 		$this->execute ();
-		$result = $this->query->setFetchMode ( PDO::FETCH_ASSOC );
-		// Test code
-		foreach ( $result as $name => $value ) {
-			echo "$name~$value";
-		}
+		$this->query->setFetchMode ( PDO::FETCH_ASSOC );
+        return $this->query->fetchAll();
+		
 	}
 }
