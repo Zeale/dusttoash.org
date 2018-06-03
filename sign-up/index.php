@@ -42,6 +42,7 @@ form {
 
 use \dusttoash\connections\Query;
 use \dusttoash\connections\Query\Pair;
+use \dusttoash\logins\Database;
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Here we do the login process
@@ -50,9 +51,10 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 	$email = $_POST ['email'];
 	$password = $_POST ['password'];
 	
-	$errors = array ();
+	if ($already_logged_in && strcasecmp ( $database->getLocalUsername (), $username ))
+		
+		$errors = array ();
 	
-	// TODO Check to make sure that input is valid (as in the username needs to not have spaces and stuff).
 	if (! $username)
 		array_push ( $errors, "Please include a username." );
 	else if (strlen ( $username ) < 3)
@@ -79,9 +81,32 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 	if ($errors)
 		printForm ( ...$errors );
 	else {
-		// TODO Create a new account (and print the page!).
+		$sessionID = random_int ( - 2 ** 15, 2 ** 15 - 1 );
+		
+		try {
+			$success = (new Query ( "INSERT INTO users (username, email, password, sessionID) VALUES (:username, :email, :password, :sessionID)", null, null, null, new Pair ( "username", $username ), new Pair ( "email", $email ), new Pair ( "password", $password ), new Pair ( "sessionID", $sessionID ) ))->execute ();
+		} catch ( PDOException $e ) {
+			$success = false;
+			$ERR = true;
+		}
+		
+		if ($success) {
+			if ($already_logged_in)
+				Database::logoutLocally ();
+			Database::loginLocally ( $username, $sessionID );
+		}
+		
 		t ( true );
-		echo "Account successfully created!";
+		if ($success)
+			echo "Account successfully created!";
+		else {
+			if (isset ( $e ))
+				echo '<span style="color: var(--hard-red);">An internal error has occurred. Your account might have still been created, however. You can refresh the page to try and create the account again in case it wasn\'t made.</span>';
+				// For debugging only
+				// echo "<div><pre class='code-output'>" . $e->getMessage () . "</pre></div>";
+			else
+				echo '<span style="color: var(--hard-gold);">Failed to create account. Refresh the page to try again.</span>';
+		}
 		b ();
 	}
 } else {

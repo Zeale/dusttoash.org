@@ -62,7 +62,7 @@ class Query {
 			$this->query->bindParam ( $pair->getBinding (), $pair->getValue () );
 		}
 		unset ( $pair );
-		$this->query->execute ();
+		return $this->query->execute ();
 	}
 	
 	// Executes query then fetches data.

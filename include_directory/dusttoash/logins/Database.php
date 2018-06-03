@@ -37,7 +37,7 @@ class Database {
 		$sessionID = $_COOKIE [self::COOKIE_SESSION_ID];
 		
 		// Inside those parantheses, we're creating a new Query (to return any users that have the same sessionID and username as the client has in their cookies). We then run this query, and get an associative array as the result. self::$loggedIn is given the array, evaluated into a boolean (so false if it's empty meaning there is no user with a matching username and sessionID, or true otherwise). We return the result of this assignment to self::$loggedIn, so whether or not the user is logged in.
-		return self::$loggedIn = (new \dusttoash\connections\Query ( "SELECT id FROM users WHERE username=:username, session_id=:sessionID", NULL, NULL, NULL, new \dusttoash\connections\Query\Pair ( "username", $username ), new \dusttoash\connections\Query\Pair ( "sessionID", $sessionID ) ))->fetch ();
+		return self::$loggedIn = (new \dusttoash\connections\Query ( "SELECT id FROM users WHERE username=:username AND sessionID=:sessionID", NULL, NULL, NULL, new \dusttoash\connections\Query\Pair ( "username", $username ), new \dusttoash\connections\Query\Pair ( "sessionID", $sessionID ) ))->fetch ();
 	}
 	
 	/*
@@ -64,12 +64,22 @@ VALUES (:username, :email, :password, $sessionID)" );
 		}
 		$connection = null;
 	}
-	private static function loginLocally(string $username, int $sessionID) {
+	public static function loginLocally(string $username, int $sessionID) {
 		setcookie ( self::COOKIE_USERNAME, $username, 0, "/" );
 		setcookie ( self::COOKIE_SESSION_ID, $sessionID, 0, "/" );
 	}
-	private static function logoutLocally() {
+	public static function logoutLocally() {
 		setcookie ( self::COOKIE_USERNAME, FALSE, time () - 1, "/" );
 		setcookie ( self::COOKIE_SESSION_ID, FALSE, time () - 1, "/" );
+	}
+	public static function getLocalUsername() {
+		if (isset ( $_COOKIE [self::COOKIE_USERNAME] ))
+			return $_COOKIE [self::COOKIE_USERNAME];
+		return false;
+	}
+	public static function getLocalSessionID() {
+		if (isset ( $_COOKIE [self::COOKIE_SESSION_ID] ))
+			return $_COOKIE [self::COOKIE_SESSION_ID];
+		return false;
 	}
 }
