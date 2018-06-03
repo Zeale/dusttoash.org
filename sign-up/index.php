@@ -21,7 +21,7 @@ submit any delicate information here.
 is the reason that I haven't verified my certificate with a "trusted authority blah blah blah."
 <?php
 	
-	global $already_logged_in;
+	global $already_logged_in, $username, $email, $password;
 	if ($already_logged_in)
 		// Give a notice to logged in users that they'll be logged out.
 		echo "<span style=\"color: var(--hard-red);\">By the way, you are already logged in. Creating a new account will log you out of your current account.</span>"?>
@@ -32,9 +32,10 @@ form {
 }
 </style>
 <form style="margin-top: 50px;" method="post">
-	Username: <input type="text" name="username" <?php ?>> <br> <br> <br>
-	Email: <input type="email" name="email"> <br> <br> <br> Password: <input
-		type="password" name="password"> <br> <br> <br> <input type="submit">
+	Username: <input type="text" name="username"<?php if(isset($username)) echo " value='" . $username . "'";?>>
+	<br> <br> <br> Email: <input type="email" name="email"<?php if(isset($email)) echo " value='" . $email . "'";?>> <br> <br> <br>
+	Password: <input type="password" name="password"<?php if(isset($password)) echo " value='" . $password . "'";?>> <br> <br> <br> <input
+		type="submit">
 </form>
 <?php
 }
@@ -51,30 +52,33 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 	
 	$errors = array ();
 	
-	$usernameChecked = $emailChecked = false;
-	
 	// TODO Check to make sure that input is valid (as in the username needs to not have spaces and stuff).
-	
-	if (! $username) {
+	if (! $username)
 		array_push ( $errors, "Please include a username." );
-		$usernameChecked = true;
-	}
-	if (! $email) {
+	else if (strlen ( $username ) < 3)
+		array_push ( $errors, "Your username is too short." );
+	else if (strlen ( $username ) > 32)
+		array_push ( $errors, "Your username is too long." );
+	else if (! preg_match ( "/^[\w _\\-\\.\u{00c4}\u{00e4}\u{00cb}\u{00eb}\u{00cf}\u{00ef}\u{00d6}\u{00f6}\u{00dc}\u{00fc}\u{0178}\u{00ff}]*$/", $username ))
+		array_push ( $errors, "Your username includes some invalid characters." );
+	else if ((new Query ( "SELECT * FROM users WHERE username=:username", null, null, null, new Pair ( "username", $username ) ))->fetch ())
+		array_push ( $errors, "'$username' is taken. Please use a different username." );
+	
+	if (! $email)
 		array_push ( $errors, "Please include an email address." );
-		$emailChecked = true;
-	}
+	else if (strlen ( $email ) > 255)
+		array_push ( $errors, "That email is too large." );
+	else if (! filter_var ( $email, FILTER_VALIDATE_EMAIL ))
+		array_push ( $errors, "That email is invalid." );
+	else if ((new Query ( "SELECT * FROM users WHERE email=:email", null, null, null, new Pair ( "email", $email ) ))->fetch ())
+		array_push ( $errors, "'$email' is already in use. Please use a different email." );
+	
 	if (! $password)
 		array_push ( $errors, "Please include a password." );
 	
-	// We want to notify the user that their username is taken, only if the username is not invalid. I'm not putting this here because I expect there not to be invalid usernames. I'm putting this here because I don't want PHP making a useless database lookup.
-	if (! $usernameChecked && (new Query ( "SELECT * FROM users WHERE username=:username", NULL, NULL, NULL, new Pair ( "username", $username ) ))->fetch ())
-		array_push ( $errors, "'$username' is taken. Please use a different username." );
-	if (! $emailChecked && (new Query ( "SELECT * FROM users WHERE email=:email", NULL, NULL, NULL, new Pair ( "email", $email ) ))->fetch ())
-		array_push ( $errors, "'$email' is already in use. Please use a different email." );
-	
-	if ($errors) {
+	if ($errors)
 		printForm ( ...$errors );
-	} else {
+	else {
 		// TODO Create a new account (and print the page!).
 		t ( true );
 		echo "Account successfully created!";
