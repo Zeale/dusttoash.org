@@ -64,6 +64,10 @@ class Query {
 		unset ( $pair );
 		return $this->query->execute ();
 	}
+	public function bind(string ...$bindingNames) {
+		foreach ( $bindingNames as $bindingName )
+			$this->query->bindParam ( $bindingName, $$bindingName );
+	}
 	
 	// Executes query then fetches data.
 	public function fetch(Query\Pair ...$bindings) {
