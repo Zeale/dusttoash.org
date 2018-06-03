@@ -8,7 +8,7 @@
     --hard-red: #d00;
     --hard-blue: #00d;
     --hard-green: #0d0;
-    --hard-gold: #0dd;
+    --hard-gold: #dd0;
 
     /* 
      * These values may get changed in the document that imports this css code. The "soft-*color*" values should remain, however. 
@@ -17,6 +17,13 @@
      */
     --primary-color: var(--soft-blue);
     --secondary-color: var(--soft-red);
+}
+
+@media not screen and (pointer: fine) {
+    :root {
+        --primary-color: var(--soft-red);
+    --secondary-color: var(--soft-blue);
+    }
 }
 
 body {
@@ -69,14 +76,6 @@ body {
 
 @media not screen and (pointer: fine) {
 
-    .header span:hover {
-        text-shadow: 0 0 15px var(--secondary-color);
-    }
-
-    .header {
-        color: var(--secondary-color);
-    }
-
     .header span {
         /* Makes text look like it's a cutout piece of paper above the stuff it's on top of. This can be seen easiest when zooming in very close on iPhone. */
         text-shadow: 0 0 1px black;
@@ -101,7 +100,7 @@ body {
 
     border: 2px solid black;
 
-    color: var(--primary-color);
+    color: var(--soft-blue);
     font-size: 18;
     font-family: monospace, sans-serif;
     font-weight: 600;
