@@ -11,10 +11,7 @@ class HeaderItem {
 	}
 }
 
-// I'll deal with namespaces and stuff later.
-
-?>
-<?php function t(bool $centerContent=null, bool $includeDefaults=null, HeaderItem ...$headings) { ?>
+function t(bool $centerContent=null, bool $includeDefaults=null, HeaderItem ...$headings) { ?>
 <html lang="en">
 
 <head>
