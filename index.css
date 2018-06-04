@@ -145,6 +145,10 @@ span.centered, .content-root.centered span, .content-root.centered div {
     display: inline-block;
 }
 
+.content-root.centered span span {
+    display: inline;
+}
+
 .anchor {
     transition: color 0.3s ease, text-shadow 0.3s ease;
     display: inline-block;
