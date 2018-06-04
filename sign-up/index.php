@@ -51,32 +51,34 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 	$email = $_POST ['email'];
 	$password = $_POST ['password'];
 	
-	if ($already_logged_in && strcasecmp ( $database->getLocalUsername (), $username ))
+	$errors = array ();
+	
+	if ($already_logged_in && ! strcasecmp ( $database->getLocalUsername (), $username ))
+		array_push ( $errors, "You can't \"<span style='color: white;'>create</span>\" the account you're currently using." );
+	else {
+		if (! $username)
+			array_push ( $errors, "Please include a username." );
+		else if (strlen ( $username ) < 3)
+			array_push ( $errors, "Your username is too short." );
+		else if (strlen ( $username ) > 32)
+			array_push ( $errors, "Your username is too long." );
+		else if (! preg_match ( "/^[\w _\\-\\.\u{00c4}\u{00e4}\u{00cb}\u{00eb}\u{00cf}\u{00ef}\u{00d6}\u{00f6}\u{00dc}\u{00fc}\u{0178}\u{00ff}]*$/", $username ))
+			array_push ( $errors, "Your username includes some invalid characters." );
+		else if ((new Query ( "SELECT * FROM users WHERE username=:username", null, null, null, new Pair ( "username", $username ) ))->fetch ())
+			array_push ( $errors, "'$username' is taken. Please use a different username." );
 		
-		$errors = array ();
-	
-	if (! $username)
-		array_push ( $errors, "Please include a username." );
-	else if (strlen ( $username ) < 3)
-		array_push ( $errors, "Your username is too short." );
-	else if (strlen ( $username ) > 32)
-		array_push ( $errors, "Your username is too long." );
-	else if (! preg_match ( "/^[\w _\\-\\.\u{00c4}\u{00e4}\u{00cb}\u{00eb}\u{00cf}\u{00ef}\u{00d6}\u{00f6}\u{00dc}\u{00fc}\u{0178}\u{00ff}]*$/", $username ))
-		array_push ( $errors, "Your username includes some invalid characters." );
-	else if ((new Query ( "SELECT * FROM users WHERE username=:username", null, null, null, new Pair ( "username", $username ) ))->fetch ())
-		array_push ( $errors, "'$username' is taken. Please use a different username." );
-	
-	if (! $email)
-		array_push ( $errors, "Please include an email address." );
-	else if (strlen ( $email ) > 255)
-		array_push ( $errors, "That email is too large." );
-	else if (! filter_var ( $email, FILTER_VALIDATE_EMAIL ))
-		array_push ( $errors, "That email is invalid." );
-	else if ((new Query ( "SELECT * FROM users WHERE email=:email", null, null, null, new Pair ( "email", $email ) ))->fetch ())
-		array_push ( $errors, "'$email' is already in use. Please use a different email." );
-	
-	if (! $password)
-		array_push ( $errors, "Please include a password." );
+		if (! $email)
+			array_push ( $errors, "Please include an email address." );
+		else if (strlen ( $email ) > 255)
+			array_push ( $errors, "That email is too large." );
+		else if (! filter_var ( $email, FILTER_VALIDATE_EMAIL ))
+			array_push ( $errors, "That email is invalid." );
+		else if ((new Query ( "SELECT * FROM users WHERE email=:email", null, null, null, new Pair ( "email", $email ) ))->fetch ())
+			array_push ( $errors, "'$email' is already in use. Please use a different email." );
+		
+		if (! $password)
+			array_push ( $errors, "Please include a password." );
+	}
 	
 	if ($errors)
 		printForm ( ...$errors );
@@ -102,8 +104,8 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 		else {
 			if (isset ( $e ))
 				echo '<span style="color: var(--hard-red);">An internal error has occurred. Your account might have still been created, however. You can refresh the page to try and create the account again in case it wasn\'t made.</span>';
-				// For debugging only
-				// echo "<div><pre class='code-output'>" . $e->getMessage () . "</pre></div>";
+			// For debugging only
+			// echo "<div><pre class='code-output'>" . $e->getMessage () . "</pre></div>";
 			else
 				echo '<span style="color: var(--hard-gold);">Failed to create account. Refresh the page to try again.</span>';
 		}
