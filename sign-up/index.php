@@ -43,8 +43,8 @@ form {
 use \dusttoash\connections\Query;
 use \dusttoash\connections\Query\Pair;
 use \dusttoash\logins\Database;
-// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+	// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 // Here we do the login process
 if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_POST ['password'] )) {
 	$username = $_POST ['username'];
@@ -78,6 +78,8 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 		
 		if (! $password)
 			array_push ( $errors, "Please include a password." );
+		else if (strpos ( $password, " " ) !== false)
+			array_push ( $errors, "Your password cannot include a space. (This is the only restriction.)" );
 	}
 	
 	if ($errors)
@@ -109,6 +111,8 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 			else
 				echo '<span style="color: var(--hard-gold);">Failed to create account. Refresh the page to try again.</span>';
 		}
+		unset($e);
+		unset($ERR);
 		b ();
 	}
 } else {
