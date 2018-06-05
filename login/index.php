@@ -4,15 +4,10 @@ use dusttoash\connections\Query;
 use dusttoash\connections\Query\Pair;
 $database = new Database ();
 $loggedIn = $database->isLoggedIn ();
-
-$var = (new Query ( "SELECT password FROM users WHERE email=:identifier", null, null, null, new Pair ( "identifier", $identifier ) ))->fetch ();
-var_dump ( $var );
-exit ();
 function printForm(string ...$errors) {
 	global $loggedIn;
 	
-	t ();
-	
+	t ( true );
 	if ($loggedIn)
 		echo "<span style='color: var(--hard-gold);'>You are already logged in. Logging to a new account will log you out of your current account.</span>";
 	
@@ -41,9 +36,11 @@ if (isset ( $_POST ['identifier'] ) and isset ( $_POST ['password'] )) {
 	
 	$errors = array ();
 	
+	$isEmail = false;
+	
 	if (! $identifier)
 		array_push ( $errors, "Please enter either your username or your email." );
-	else if (strpos ( $identifier, "@" ) !== false)
+	else if ($isEmail = (strpos ( $identifier, "@" ) !== false))
 		// Handle email.
 		if (strlen ( $identifier ) > 255)
 			array_push ( $errors, "That email is too large." );
@@ -87,7 +84,7 @@ if (isset ( $_POST ['identifier'] ) and isset ( $_POST ['password'] )) {
 		else {
 			$sessionID = random_int ( - 2 ** 15, 2 ** 15 - 1 );
 			try {
-				$success = ( boolean ) (new Query ( "UPDATE `users` SET `sessionID` = :sessionID WHERE `users`.`id` = 1", new Pair ( ":sessionID", $sessionID ) ));
+				$success = ( boolean ) (new Query ( "UPDATE users SET sessionID = :sessionID WHERE " . ($isEmail ? "email=:email" : "username=:username"), null, null, null, new Pair ( "sessionID", $sessionID ), ($isEmail ? new Pair ( "email", $email ) : new Pair ( "username", $username )) ))->execute ();
 				$database->loginLocally ( $username, $sessionID );
 			} catch ( PDOException $e ) {
 				$success = false;
@@ -98,9 +95,10 @@ if (isset ( $_POST ['identifier'] ) and isset ( $_POST ['password'] )) {
 			if ($success)
 				echo "You've successfully been logged in!";
 			else {
-				if (isset ( $e ))
+				if (isset ( $e )) {
 					echo '<span style="color: var(--hard-red);">An internal error has occurred. You might have still been logged in, however. You can refresh the page to try and log in again just in case.</span>';
-				else
+					var_dump ( $e );
+				} else
 					echo '<span style="color: var(--hard-gold);">Failed to log you in. Refresh the page to try again.</span>';
 			}
 			unset ( $e );
