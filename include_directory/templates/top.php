@@ -17,6 +17,7 @@ function t(bool $centerContent=null, bool $includeDefaults=null, HeaderItem ...$
 <head>
 <title>Dust To Ash</title>
 <link href="/index.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="/favicon/Kr%C3%B6wV1.png" />
 <script src="/index.js" type="text/javascript"></script>
 
 <!-- Acme font -->
