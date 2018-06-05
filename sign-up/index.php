@@ -96,7 +96,7 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 		
 		if ($success) {
 			if ($already_logged_in)
-				Database::logoutLocally ();
+				Database::logout ();
 			Database::loginLocally ( $username, $sessionID );
 		}
 		
@@ -111,8 +111,8 @@ if (isset ( $_POST ['username'] ) and isset ( $_POST ['email'] ) and isset ( $_P
 			else
 				echo '<span style="color: var(--hard-gold);">Failed to create account. Refresh the page to try again.</span>';
 		}
-		unset($e);
-		unset($ERR);
+		unset ( $e );
+		unset ( $ERR );
 		b ();
 	}
 } else {
