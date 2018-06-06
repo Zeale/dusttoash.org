@@ -4,7 +4,7 @@
     --soft-blue: deepskyblue;
     --soft-green: #35b746;
     --soft-gold: #edc410;
-    
+
     --hard-red: #d00;
     --hard-blue: #00d;
     --hard-green: #0d0;
@@ -22,7 +22,7 @@
 @media not screen and (pointer: fine) {
     :root {
         --primary-color: var(--soft-red);
-    --secondary-color: var(--soft-blue);
+        --secondary-color: var(--soft-blue);
     }
 }
 
@@ -122,7 +122,9 @@ body {
 }
 
 /* PHP's var dump stuff */
-.content-root pre.xdebug-var-dump, .content-root pre.code-output {
+
+.content-root pre.xdebug-var-dump,
+.content-root pre.code-output {
     border-style: solid;
     border-width: 1.8px;
     border-radius: 4px;
@@ -139,7 +141,9 @@ body {
     color: gold;
 }
 
-span.centered, .content-root.centered span, .content-root.centered div {
+span.centered,
+.content-root.centered span,
+.content-root.centered div {
     /* Will force span to be full width. */
     width: 100%;
     display: inline-block;

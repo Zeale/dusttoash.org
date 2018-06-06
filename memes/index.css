@@ -1,0 +1,30 @@
+.content-root img {
+    margin: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.content-root {
+    text-align: center;
+}
+
+@media not screen and (pointer: fine) {
+
+    .content-root img {
+        display: inline;
+        max-width: 35%;
+        min-width: 35%;
+    }
+
+    @media (orientation: portrait) {
+        .content-root img {
+            display: inline;
+            margin-left: 0;
+            margin-right: 0;
+            max-width: 100%;
+            /* Make sure that only one image will show per line. (For my phone, the smallest number, down to 7 decimals, that forces the images to wrap is 50.0018178) */
+            min-width: 50.01%;
+        }
+    }
+
+}
