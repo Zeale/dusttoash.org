@@ -51,6 +51,11 @@ _*_protected/
 _*_prot/
 /!personal/
 
+### Specific Website Things ###
+/memes/*.png
+/memes/*.jpg
+/memes/*.jpeg
+
 ### Eclipse PHP Project Crap ###
 # I have a PHP Project or two in random places that are inaccessible via website.
 # These may get removed later. Maybe...
