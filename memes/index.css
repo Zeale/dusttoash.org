@@ -8,6 +8,15 @@
     text-align: center;
 }
 
+.meme-set-link {
+    text-decoration: none;
+    color: goldenrod;
+}
+
+.meme-set-link:hover {
+    text-decoration: underline goldenrod solid;
+}
+
 @media not screen and (pointer: fine) {
 
     .content-root img {
