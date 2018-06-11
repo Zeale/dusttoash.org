@@ -14,11 +14,7 @@ function printForm(string ...$errors) {
 		echo "<span style='color: var(--hard-red);'>$error</span>";
 	
 	?>
-	    Please note that this website does not have a "verified certificate." (If you're using Chrome then you were probably notified of this upon visiting.) If someone is persistently trying to hack you, there might be a risk with submitting information here. Because of this, I advise you to
-<b>not</b>
-submit any delicate information.
-<a href="reasons.php">This</a>
-is the reason that I haven't verified my certificate with a "trusted authority blah blah blah."
+	   Your password is <b>not</b> encrypted, and this page is for developer use.
 <?php
 	
 	global $already_logged_in, $username, $email, $password;
