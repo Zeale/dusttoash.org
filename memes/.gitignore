@@ -1,3 +1,6 @@
-sets/set-*/*.png
-sets/set-*/*.jpg
-sets/set-*/*.jpeg
+sets/set-**/*.png
+sets/set-**/*.jpg
+sets/set-**/*.jpeg
+sets/set-**/*.gif
+
+# sets/set-*/*.bmp
