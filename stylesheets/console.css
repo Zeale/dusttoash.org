@@ -1,0 +1,50 @@
+div.code-block {
+    border-style: solid;
+    border-width: 1.8px;
+    border-radius: 4px;
+	border-color: var(--hard-green);
+	text-align: justify;
+    background: linear-gradient(to bottom, #292929, #202020 20%, #202020 80%, #292929);
+}
+
+div.code-block:first-child {
+	margin-top: 10px;
+}
+
+div.code-block pre {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify;
+    color: var(--hard-red);
+	counter-reset: line;
+	white-space: pre-wrap;
+}
+
+div.code-block pre code {
+	counter-increment: line;
+	transition: background-color 0.3s;
+}
+
+div.code-block pre::selection, div.code-block pre code::selection {
+	background-color: gold;
+	color: black;
+}
+
+div.code-block pre code:hover {
+	background-color: #ee000030
+}
+
+div.code-block pre code:before {
+	border: 1px dashed #121212;
+	padding-left: 3px;
+	padding-right: 3px;
+	margin-right: 4.3px;
+	content: counter(line);
+	-webkit-user-select: none;
+	color: #444;
+	transition: color 0.4s ease 0.1s;
+}
+
+div.code-block pre code:hover:before {
+	color: var(--soft-gold);
+}
