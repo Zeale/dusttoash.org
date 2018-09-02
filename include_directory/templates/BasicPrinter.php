@@ -11,7 +11,7 @@ class BasicPrinter extends Printer {
 	public $centerContent, $includeDefaultHeaders;
 	
 	// Array values. Must be kept arrays and simply be edited by calling code.
-	private $headerItems = array (), $headIncludes = array ();
+	private $headerItems = array (), $headIncludes = array (), $stylesheets = array ();
 	public function addHeaderItems(HeaderItem ...$headerItems) {
 		// Empty inputs and other things going into array_push probably need to be checked.
 		array_push ( $this->headerItems, ...$headerItems );
@@ -25,17 +25,36 @@ class BasicPrinter extends Printer {
 	public function removeHeadIncludes(string ...$headIncludes) {
 		array_diff ( $this->headIncludes, $headIncludes );
 	}
+    public function addStylesheets(string ...$stylesheets) {
+        array_push ( $this->stylesheets, ...$stylesheets );
+    }
+    public function removeStylesheets(string ...$stylesheets) {
+        array_diff( $this->stylesheets, $stylesheets );
+    }
 	function printTop() {
 		?>
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92180284-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92180284-1');
+</script>
+
 <title>Dust To Ash</title><?php
 		
 		foreach ( $this->headIncludes as $include )
 			echo $include;
 		?>
 <link href="/index.css" rel="stylesheet" type="text/css">
+<?php foreach ($this->stylesheets as $sheet) {
+            ?><link href="/stylesheets/<?php echo $sheet;?>.css" rel="stylesheet" type="text/css">
+<?php } ?>
 <link rel="icon" type="image/png" href="/favicon/Kr%C3%B6wV1.png" />
 <script src="/index.js" type="text/javascript"></script>
 
@@ -50,9 +69,11 @@ class BasicPrinter extends Printer {
 <?php
 		
 		if (count ( $this->headerItems ) == 0 || $this->includeDefaultHeaders) {
-			array_push ( $this->headerItems, new HeaderItem ( "Home", "/" ), new HeaderItem ( "About", "/about" ) );
-			if ((new Database ())->isLoggedIn ())
+			array_push ( $this->headerItems, new HeaderItem ( "Home", "/" )/*, new HeaderItem ( "About", "/about" ) */ );
+			if ((new Database ())->isLoggedIn ()){
+            array_push ( $this->headerItems, new HeaderItem( "Console", "/console" ) );
 				array_push ( $this->headerItems, new HeaderItem ( "Sign Out", "/sign-out" ) );
+        }
 			else
 				array_push ( $this->headerItems, new HeaderItem ( "Login", "/login" ), new HeaderItem ( "Sign Up", "/sign-up" ) );
 		}
@@ -73,7 +94,7 @@ class BasicPrinter extends Printer {
 	<footer>
 		<span id="FooterTitle"> <strong> Dust To Ash </strong>
 		</span> <a id="CopyrightNotice" style="display: block;"
-			href="/copyright-info"><span>Copyrights belong to Zeale.</span> <span
+			href="/copyright-info"><span>Website by Zeale.</span><span style="color: gold"><sup>&copy;</sup></span> <span
 			style="color: blue;">More Info.</span></a>
 	</footer>
 </body>

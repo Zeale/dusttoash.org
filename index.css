@@ -105,6 +105,7 @@ body {
     font-family: monospace, sans-serif;
     font-weight: 600;
     word-wrap: break-word;
+	padding: 0px;
 }
 
 .content-root h1,
@@ -128,7 +129,18 @@ body {
     border-style: solid;
     border-width: 1.8px;
     border-radius: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify;
     background: linear-gradient(to bottom, #292929, #202020 20%, #202020 80%, #292929);
+}
+
+.content-root .inline-code {
+	display: inline;
+	border: 1px solid, black;
+	background: linear-gradient(to bottom, #292929, #202020 20%, #202020 80%, #292929);
+	font-family: Monospace;
+	color: #777;
 }
 
 .content-root pre.xdebug-var-dump {

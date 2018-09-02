@@ -52,9 +52,14 @@ _*_prot/
 /!personal/
 
 ### Specific Website Things ###
-/memes/*.png
-/memes/*.jpg
-/memes/*.jpeg
+memes/*.png
+memes/*.jpg
+memes/*.jpeg
+memes/sets/Fallout 4 (1)/*.png
+memes/sets/Fallout 4 (1)/*.jpg
+memes/sets/Fallout 4 (1)/*.jpeg
+
+programs/
 
 ### Eclipse PHP Project Crap ###
 # I have a PHP Project or two in random places that are inaccessible via website.
@@ -63,3 +68,5 @@ _*_prot/
 .settings/
 .project
 .buildpath
+
+memes/sets/Fallout 4 (1)/2018-06-23 01.45.08.jpg

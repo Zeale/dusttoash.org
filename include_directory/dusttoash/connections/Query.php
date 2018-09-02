@@ -10,7 +10,7 @@ class Pair {
 		if ($value != NULL)
 			$this->value = $value;
 	}
-	public function setValue(mixed &$value) {
+	public function setValue(&$value) {
 		$this->value = $value;
 	}
 	public function getBinding() {
