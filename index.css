@@ -122,6 +122,15 @@ body {
     text-align: center;
 }
 
+.content-root li {
+    list-style-position: inside;
+}
+
+.content-root ol,
+.content-root ul {
+    padding-left: 0px;
+}
+
 /* PHP's var dump stuff */
 
 .content-root pre.xdebug-var-dump,

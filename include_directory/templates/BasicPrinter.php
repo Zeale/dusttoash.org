@@ -2,7 +2,6 @@
 
 namespace templates;
 
-use templates\Printer;
 use dusttoash\logins\Database;
 
 class BasicPrinter extends Printer {

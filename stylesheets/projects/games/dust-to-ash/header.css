@@ -1,0 +1,13 @@
+@keyframes dust-to-ash--header-color-animation-wheel {
+	0% {	color: white;	}
+	17% {	color: var(--soft-gold);	}
+	33% {	color: var(--hard-blue);	}
+	50% {	color: var(--hard-green);	}
+	67% {	color: var(--hard-red);	}
+	83% {	color: black;	}
+	100% {	color: white;	}
+}
+
+.title {
+	animation: dust-to-ash--header-color-animation-wheel 6.5s infinite linear;
+}
