@@ -41,6 +41,7 @@ body {
     background: linear-gradient(to bottom, #434343, #575757 50%, #434343 75%, #323232 84%, #212121 98%, #111);
     color: var(--primary-color);
     display: table;
+    table-layout: fixed;
     box-shadow: 0 0 4px black;
 }
 
@@ -75,12 +76,10 @@ body {
 /* Forgot that media type was required when using not or only */
 
 @media not screen and (pointer: fine) {
-
     .header span {
         /* Makes text look like it's a cutout piece of paper above the stuff it's on top of. This can be seen easiest when zooming in very close on iPhone. */
         text-shadow: 0 0 1px black;
     }
-
 }
 
 .spacing {
