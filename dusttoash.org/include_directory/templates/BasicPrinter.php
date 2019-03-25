@@ -54,7 +54,6 @@ class BasicPrinter extends Printer {
 <?php foreach ($this->stylesheets as $sheet) {
             ?><link href="/stylesheets/<?php echo $sheet;?>.css" rel="stylesheet" type="text/css">
 <?php } ?>
-<link rel="icon" type="image/png" href="/favicon/Kr%C3%B6wV1.png" />
 <script src="/index.js" type="text/javascript"></script>
 
 <!-- Acme font -->
