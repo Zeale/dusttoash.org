@@ -2,7 +2,10 @@
 	--theme-primary-color: black;
 	--background-color: #0004;
 	--foreground-color: white;
-	--theme-border: 3.2px solid var(--foreground-color);
+	--theme-border-width: 3px;
+	--theme-border-style: solid;
+	--theme-border-color: var(--foreground-color);
+	--theme-border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
 }
 
 html, body, #Background {
@@ -39,7 +42,9 @@ body {
 	table-layout: fixed;
 	
 	background-color: var(--background-color);
-	border: var(--theme-border);
+	border-width: 0px 0px var(--theme-border-width) 0px;
+	border-style: var(--theme-border-style);
+	border-color: var(--theme-border-color)
 	
 }
 
