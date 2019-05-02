@@ -8,10 +8,6 @@
 	--theme-border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
 }
 
-#Background {
-	height: 100%;
-}
-
 body {
 	background-color: #2B2B2B;
 	margin: 0;
@@ -31,14 +27,8 @@ body {
 	z-index: -1;
 }
 
-#Wrapper {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-}
-
 #Header {
+  position: sticky;
 	width: 100%;
 	top: 0;
 	left: 0;
@@ -81,7 +71,6 @@ body {
 
 #Content {
 	text-align: center;
-	position: relative;
 	margin-top: 4em;
   margin-left: 2em;
   margin-right: 2em;

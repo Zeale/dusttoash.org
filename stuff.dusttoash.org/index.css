@@ -1,4 +1,5 @@
 #Content {
+  position: relative;
 	left: calc(25% - 2em - var(--theme-border-width));
 	width: 50%;
 	margin-top: 22em;
