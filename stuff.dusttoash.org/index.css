@@ -3,7 +3,4 @@
 	width: 50%;
 	margin-top: 22em;
 	padding: 2em;
-	color: white;
-	border: var(--theme-border);
-	background-color: var(--background-color);
 }
