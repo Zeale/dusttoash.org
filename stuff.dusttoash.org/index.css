@@ -8,7 +8,7 @@
 	--theme-border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
 }
 
-html, body, #Background {
+#Background {
 	height: 100%;
 }
 
@@ -68,9 +68,9 @@ body {
 	position: relative;
 	left: 25%;
 	width: 50%;
-	margin-top: 25vh;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	margin-top: 22em;
+	padding-top: 2em;
+	padding-bottom: 2em;
 	color: white;
 	border: var(--theme-border);
 	background-color: var(--background-color);
