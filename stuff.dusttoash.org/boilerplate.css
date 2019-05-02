@@ -42,31 +42,33 @@ body {
 	
 }
 
-#Header > span {
-
+#Header > span, .button {
+  cursor: pointer;
 	--trans-time = 0.4s;
 
 	transition: color var(--trans-time);
 	transition: background-color var(--trans-time);
 	transition: box-shadow var(--trans-time);
-	
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	
-	color: var(--foreground-color);
+  
+  color: var(--foreground-color);
 	background-color: var(--background-color);
 	box-shadow: none;
-	
-	display: table-cell;
+
 	text-align: center;
-	font-size: 2.4rem;
-	color: var(--foreground-color);
 }
 
-#Header > span:hover {
+#Header > span:hover, .button:hover {
 	color: var(--background-color);
 	background-color: var(--foreground-color);
 	box-shadow: 0 0 80px var(--foreground-color);
+}
+
+#Header > span {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	
+	display: table-cell;
+	font-size: 2.4rem;
 }
 
 #Content {
