@@ -82,11 +82,10 @@ body {
 #Content {
 	text-align: center;
 	position: relative;
-	left: 25%;
+	left: calc(25% - 2em - var(--theme-border-width));
 	width: 50%;
 	margin-top: 22em;
-	padding-top: 2em;
-	padding-bottom: 2em;
+	padding: 2em;
 	color: white;
 	border: var(--theme-border);
 	background-color: var(--background-color);
