@@ -1,0 +1,2 @@
+php_value include_path "c:\wamp64\dusttoash\stuff.dusttoash.org\include_directory;."
+php_value auto_prepend_file "autoload"

@@ -1,0 +1,20 @@
+<?php 
+function t($title=NULL, $header_links=array("<link rel=\"stylesheet\" type=\"text/css\" href=\"/boilerplate.css\">")) { if ($title===NULL)$title="Stuff";?><html>
+	<head>
+		<title><?php echo $title;?></title>
+    <?php foreach($header_links as $l)  echo$l;?>
+	</head>
+	<body>
+		<div id=Background></div>
+    <div id=Header>
+      <span onclick="document.location.href='/'">Home</span>
+      <span onclick="document.location.href='/download'">Download</span>
+    </div>
+    <div id=Content>
+      <span style=font-size:1.2em;>
+      <?php }
+  function b() { ?>
+      </span>
+    </div>
+	</body>
+</html><?php }

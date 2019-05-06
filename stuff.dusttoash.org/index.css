@@ -2,6 +2,6 @@
   position: relative;
 	left: calc(25% - 4em - var(--theme-border-width));
 	width: 50%;
-	margin-top: 22em;
+	margin-top: 17em;
 	padding: 2em;
 }
