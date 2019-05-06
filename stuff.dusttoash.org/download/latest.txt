@@ -1,0 +1,5 @@
+v0.1.3
+5/2/2019
+Initial Release - 2
++ Pressing the Enter/Return key in the input field in the Calculator application solves the equation inside the field.
+~ Changed some colors from white to gold in the Calculator app.
