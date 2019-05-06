@@ -1,62 +1,7 @@
-:root {
-	--theme-primary-color: black;
-	--background-color: #0004;
-	--foreground-color: white;
-	--theme-border-width: 3px;
-	--theme-border-style: solid;
-	--theme-border-color: var(--foreground-color);
-	--theme-border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
-}
-
-html, body, #Background {
-	height: 100%;
-}
-
-body {
-	background-color: #2B2B2B;
-}
-
-#Background {
-	background-image: linear-gradient(#0005, #0005), url("background.png");
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	filter: blur(2px);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-#Header {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	
-	padding-top: 20px;
-	padding-bottom: 20px;
-	
-	display: table;
-	table-layout: fixed;
-	
-	background-color: var(--background-color);
-	border-width: 0px 0px var(--theme-border-width) 0px;
-	border-style: var(--theme-border-style);
-	border-color: var(--theme-border-color)
-	
-}
-
-#Header > span {
-	display: table-cell;
-	text-align: center;
-	font-size: 30px;
-	color: var(--foreground-color);
-}
-
 #Content {
-	border: var(--theme-border);
-	background-color: var(--background-color);
-	
+  position: relative;
+	left: calc(25% - 4em - var(--theme-border-width));
+	width: 50%;
+	margin-top: 17em;
+	padding: 2em;
 }

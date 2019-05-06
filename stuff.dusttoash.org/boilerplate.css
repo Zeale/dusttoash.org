@@ -1,0 +1,94 @@
+:root {
+	--theme-primary-color: black;
+	--background-color: #0009;
+	--foreground-color: white;
+	--theme-border-width: 3px;
+	--theme-border-style: solid;
+	--theme-border-color: var(--foreground-color);
+	--theme-border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
+}
+
+body {
+	background-color: #2B2B2B;
+	margin: 0;
+}
+
+#Background {
+	background-image: linear-gradient(#0005, #0005), url("background.png");
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	filter: blur(2px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+#Header {
+  position: sticky;
+	width: 100%;
+	top: 0;
+	left: 0;
+	
+	display: table;
+	table-layout: fixed;
+	
+	border-width: 0px 0px var(--theme-border-width) 0px;
+	border-style: var(--theme-border-style);
+	border-color: var(--theme-border-color)
+	
+}
+
+#Header > span, .button {
+  cursor: pointer;
+	--trans-time = 0.4s;
+
+	transition: color var(--trans-time);
+	transition: background-color var(--trans-time);
+	transition: box-shadow var(--trans-time);
+  
+  color: var(--foreground-color);
+	background-color: var(--background-color);
+	box-shadow: none;
+
+	text-align: center;
+}
+
+#Header > span:hover, .button:hover {
+	color: var(--background-color);
+	background-color: var(--foreground-color);
+	box-shadow: 0 0 80px var(--foreground-color);
+}
+
+#Header > span {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	
+	display: table-cell;
+	font-size: 2.4rem;
+}
+
+#Content {
+	text-align: center;
+	margin-top: 4em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 4em;
+	padding: 2em;
+	color: white;
+	border: var(--theme-border);
+	background-color: var(--background-color);
+}
+
+.text-link {
+	text-decoration-style: dotted;
+	text-decoration-skip-ink: none;
+	color: inherit;
+}
+
+.text-link:hover {
+	text-decoration-style: solid;
+}
