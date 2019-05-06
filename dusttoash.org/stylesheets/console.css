@@ -21,17 +21,19 @@ div.code-block pre {
 }
 
 div.code-block pre code {
+  display: inline-block;
+  width: 100%;
 	counter-increment: line;
-	transition: background-color 0.3s;
+	transition: background-color 0.1s;
 }
 
 div.code-block pre::selection, div.code-block pre code::selection {
-	background-color: gold;
+	background-color: red;
 	color: black;
 }
 
 div.code-block pre code:hover {
-	background-color: #ee000030
+	background-color: var(--hard-gold);
 }
 
 div.code-block pre code:before {
@@ -46,5 +48,5 @@ div.code-block pre code:before {
 }
 
 div.code-block pre code:hover:before {
-	color: var(--soft-gold);
+	color: black;
 }
