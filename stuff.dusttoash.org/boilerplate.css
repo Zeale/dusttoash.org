@@ -81,6 +81,7 @@ body {
 	color: white;
 	border: var(--theme-border);
 	background-color: var(--background-color);
+  box-shadow: 8px 8px 12px black;
 }
 
 .text-link {
