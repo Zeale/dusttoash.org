@@ -1,0 +1,5 @@
+v0.2.0
+5/18/2019
+Initial Release - 3
++ Added a console - Displays errors and information when operations start/occur.
++ Added an app for making web requests to websites. You can use this to send raw requests to websites, like a browser does, and see the results that the website sends back.

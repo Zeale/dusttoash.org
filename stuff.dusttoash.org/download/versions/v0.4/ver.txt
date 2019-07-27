@@ -1,0 +1,6 @@
+v0.4.0
+7/5/2019
+The Module Update
++ Added the Module app. This allows the management of modules, which are, essentially, apps that can be moved in and out of the program at will.
++ Added Labels to the Task Scheduler app.
+* Fixed a bug where stacktraces for errors wouldn't get printed to the console.

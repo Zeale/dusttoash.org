@@ -1,4 +1,4 @@
-<?php t("Changelog");$u=false;$f=fopen("../latest.txt", "r")or$u=true;?>
+<?php t("Changelog");$u=false;$f=fopen("../ver.txt", "r")or$u=true;?>
 <h1 style=font-size:4em;>Changelog<?php echo$u?"":" (".fgets($f).")"?></h1>
 <br>
 <p>

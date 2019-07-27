@@ -1,0 +1,6 @@
+v0.4.1
+7/8/2019
+The Module Update ~ Hotfix #1
+* Fixed issues with Tasks not being read correctly when the To Do list application is launched.
+* Fixed issues with Labels not being saved to Tasks, unless the Task was loaded into the program with Labels already applied to it.
+* Fixed issue where Labels would not be displayed correctly when Tasks were reordered in the To Do list's Task table.

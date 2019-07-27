@@ -1,0 +1,7 @@
+v0.3.0
+6/1/2019
+The Encryption Update
++ Added a little tool/app for encrypting text.
++ Added more supported protocols for the website request app.
++ Calculator app now has a few rounding function buttons.
+* Fixed some issues with installing the app to directories that contain a space in their name.
