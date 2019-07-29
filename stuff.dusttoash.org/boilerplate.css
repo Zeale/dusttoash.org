@@ -94,3 +94,7 @@ body {
 .text-link:hover {
 	text-decoration-style: solid;
 }
+
+.text-link:visited {
+  color: gray;
+}
