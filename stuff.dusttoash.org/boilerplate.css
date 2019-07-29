@@ -6,6 +6,7 @@
 	--theme-border-style: solid;
 	--theme-border-color: var(--foreground-color);
 	--theme-border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
+  font-family: Verdana, Arial, sans-serif;
 }
 
 body {
