@@ -7,11 +7,21 @@
 	--theme-border-color: var(--foreground-color);
 	--theme-border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
   font-family: Verdana, Arial, sans-serif;
+  --stuff-passive-color: gold;
+  --stuff-active-color: red;
 }
 
 body {
 	background-color: #2B2B2B;
 	margin: 0;
+}
+
+a {
+  color: var(--stuff-passive-color);
+}
+
+a:hover {
+  color: var(--stuff-active-color);
 }
 
 #Background {
@@ -88,13 +98,8 @@ body {
 .text-link {
 	text-decoration-style: dotted;
 	text-decoration-skip-ink: none;
-	color: inherit;
 }
 
 .text-link:hover {
 	text-decoration-style: solid;
-}
-
-.text-link:visited {
-  color: gray;
 }
