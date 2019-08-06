@@ -96,10 +96,6 @@ a:hover {
 }
 
 .text-link {
-	text-decoration-style: dotted;
-	text-decoration-skip-ink: none;
-}
-
-.text-link:hover {
 	text-decoration-style: solid;
+	text-decoration-skip-ink: none;
 }
