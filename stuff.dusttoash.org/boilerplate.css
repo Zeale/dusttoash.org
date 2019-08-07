@@ -1,0 +1,5 @@
+body {
+	background-image: linear-gradient(#000A, #000A), url("background.png");
+	background-attachment: fixed;
+	background-position: 50% 0%;
+}
