@@ -29,12 +29,13 @@ body {
 	background-color: #3332;
 	font-family: consolas, monospace;
 	font-weight: bold;
-	transition: color 0.7s;
+	transition: color 0.7s, background-color 0.7s;
 	transition-timing-function: ease-in;
 }
 .button-element:hover {
-	transition: color 0.2s;
+	transition: initial;
 	color: var(--active-color);
+	background-color: #3334;
 }
 .button-element:active {
 	transition: color 3s;
