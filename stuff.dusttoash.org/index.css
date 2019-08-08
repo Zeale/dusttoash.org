@@ -1,0 +1,32 @@
+section#Introduction {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+section#Introduction > div#TitleDiv {
+	padding-top: 35px;
+}
+
+
+section#Introduction > div > h1#Title {
+	letter-spacing: 2px;
+	font-size: 3em;
+}
+
+section#Introduction > div#DownloadButton {
+	padding-top: 75px;
+}
+
+section#Introduction > div#DownloadButton > span {
+	padding: 20px 55px 25px 55px;
+}
+
+#FreeWord {
+	text-shadow: 0px 0px 5px var(--passive-color);
+	animation: FREE-ANIMATION 1.2s linear 1s infinite alternate;
+}
+
+@keyframes FREE-ANIMATION {
+	0% { text-shadow: 0px 0px 5px var(--passive-color); }
+	100% { text-shadow: 0px 0px 0px var(--passive-color); }
+}
