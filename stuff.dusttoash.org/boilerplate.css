@@ -19,3 +19,24 @@ body {
 	overflow-x: hidden;
 	margin: 0;
 }
+
+
+.button-element {
+	cursor: pointer;
+	border-style: solid;
+	border-width: 2px;
+	border-color: transparent transparent black black;
+	background-color: #3332;
+	font-family: consolas, monospace;
+	font-weight: bold;
+	transition: color 0.7s;
+	transition-timing-function: ease-in;
+}
+.button-element:hover {
+	transition: color 0.2s;
+	color: var(--active-color);
+}
+.button-element:active {
+	transition: color 3s;
+	border-color: black black transparent transparent;
+}
