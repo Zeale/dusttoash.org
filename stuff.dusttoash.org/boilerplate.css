@@ -4,4 +4,8 @@ body {
 	background-attachment: fixed;
 	background-position: 50% 0%;
 	background-repeat: no-repeat;
+	
+	/* Body Styles */
+	overflow-x: hidden;
+	margin: 0;
 }
