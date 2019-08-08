@@ -17,7 +17,7 @@ section#Introduction > div#DownloadButton {
 	padding-top: 75px;
 }
 
-section#Introduction > div#DownloadButton > span {
+section#Introduction > div#DownloadButton > a {
 	padding: 15px 50px 20px 50px;
 	font-size: 1.3em;
 }
