@@ -38,6 +38,12 @@ body > #Background {
 	z-index: -1;
 }
 
+body > #Header {
+	position: sticky;
+	top: 0;
+	height: 100px;
+}
+
 .button-element {
 	cursor: pointer;
 	border-style: solid;
