@@ -3,6 +3,7 @@
 		/* Variables */
 		--passive-color: gold;
 		--active-color: red;
+		--effective-background-color: rgb(29.5098039218, 29.5098039218, 29.5098039218);
 	text-align: center;
 	color: var(--passive-color);
 	font-family: sans-serif;
