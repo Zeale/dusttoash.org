@@ -37,7 +37,8 @@ section#Features > #FeatureTitle {
 }
 
 section#Features > div#FeatureList > div {
-	margin: 25px 75px 30px 75px;
+	margin: 25px 25px 30px 25px;
+	padding: 50px 50px 0px 50px;
 	display: inline-block;
 	background-color: var(--effective-background-color);
 	box-shadow: 3px 3px 5px black;
@@ -46,8 +47,25 @@ section#Features > div#FeatureList > div {
 section#Features > div#FeatureList > div > img.icon {
 	height: 128px;
 	width: auto;
+	margin-bottom: 10px;
+	transition: box-shadow 0.3s;
 }
-	
+
+section#Features > div#FeatureList > div > div {
+	font-size: 1.4em;
+	font-family: monospace;
+	font-weight: bold;
+}
+
+section#Features > div#FeatureList > div div {
+	padding-bottom: 15px;
+	display: block;
+}
+
+section#Features > div#FeatureList > div:hover > img.icon {
+	box-shadow: 2px 2px 1.8px gold, -2px -2px 1.8px red;
+}
+
 
 @keyframes FREE-ANIMATION {
 	0% { text-shadow: 0px 0px 5px var(--passive-color); }
