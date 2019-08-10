@@ -37,9 +37,10 @@ section#Features > #FeatureTitle {
 }
 
 section#Features > div#FeatureList > div {
+	margin: 25px 75px 30px 75px;
 	display: inline-block;
 	background-color: var(--effective-background-color);
-	border: 1px solid black;
+	box-shadow: 3px 3px 5px black;
 }
 
 section#Features > div#FeatureList > div > img.icon {
