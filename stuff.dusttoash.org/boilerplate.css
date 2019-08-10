@@ -6,18 +6,36 @@
 	text-align: center;
 	color: var(--passive-color);
 	font-family: sans-serif;
+	
+	/* :root Styles */
+	background-color: #2B2B2B;
 }
 
 body {
+	/* Body Styles */
+	overflow-x: hidden;
+	margin: 0;
+}
+
+body > #Background {
 	/* Background */
-	background-image: linear-gradient(#000C, #000C), url("background.png"), linear-gradient(#2B2B2B, #2B2B2B);
+	background-image: linear-gradient(#0005, #0005), url("background.png");
 	background-attachment: fixed;
 	background-position: 50% 0%;
 	background-repeat: no-repeat;
 	
-	/* Body Styles */
-	overflow-x: hidden;
-	margin: 0;
+	/* Layout */
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	/* Blur */
+	filter: blur(4px);
+	
+	/* Z Index */
+	z-index: -1;
 }
 
 .button-element {
