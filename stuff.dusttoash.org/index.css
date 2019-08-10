@@ -27,6 +27,27 @@ section#Introduction > div#DownloadButton > a {
 	animation: FREE-ANIMATION 1.2s linear 1s infinite alternate;
 }
 
+
+section#Features {
+	margin-top: 150px;
+}
+
+section#Features > #FeatureTitle {
+	font-size: 4em;
+}
+
+section#Features > div#FeatureList > div {
+	display: inline-block;
+	background-color: var(--effective-background-color);
+	border: 1px solid black;
+}
+
+section#Features > div#FeatureList > div > img.icon {
+	height: 128px;
+	width: auto;
+}
+	
+
 @keyframes FREE-ANIMATION {
 	0% { text-shadow: 0px 0px 5px var(--passive-color); }
 	100% { text-shadow: 0px 0px 0px var(--passive-color); }
