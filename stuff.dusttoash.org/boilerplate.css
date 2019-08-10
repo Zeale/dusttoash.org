@@ -25,10 +25,10 @@ body {
 	border-style: solid;
 	border-width: 2px;
 	border-color: transparent transparent black black;
-	background-color: #3332;
+	background-color: #3333;
 	font-family: consolas, monospace;
 	font-weight: bold;
-	transition: color 0.7s, background-color 0.7s;
+	transition: color 0.4s, background-color 0.4s;
 	transition-timing-function: ease-in;
 	text-decoration: none;
 	color: var(--passive-color);
@@ -36,9 +36,8 @@ body {
 .button-element:hover {
 	transition: initial;
 	color: var(--active-color);
-	background-color: #3334;
+	background-color: #3335;
 }
 .button-element:active {
-	transition: color 3s;
 	border-color: black black transparent transparent;
 }
