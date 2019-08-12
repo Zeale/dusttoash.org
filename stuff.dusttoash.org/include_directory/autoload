@@ -1,5 +1,6 @@
-<?php 
-function t($title=NULL, $header_links=array("<link rel=\"stylesheet\" type=\"text/css\" href=\"/boilerplate.css\">")) { if ($title===NULL)$title="Stuff";?><html>
+<?php
+const DEFAULT_HEADER_LINKS = array("<link rel=\"stylesheet\" type=\"text/css\" href=\"/boilerplate.css\">","<script type=\"text/javascript\" src=\"/boilerplate.js\"></script>");
+function t($title=NULL, $header_links=DEFAULT_HEADER_LINKS) { if ($title===NULL)$title="Stuff";?><html>
 	<head>
 		<title><?php echo $title;?></title>
     <?php foreach($header_links as $l)  echo$l;?>
@@ -13,7 +14,7 @@ function t($title=NULL, $header_links=array("<link rel=\"stylesheet\" type=\"tex
     <div id=Content>
       <span style=font-size:1.2em;>
       <?php }
-  function b() { ?>
+function b() { ?>
       </span>
     </div>
 	</body>
