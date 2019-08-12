@@ -9,7 +9,7 @@
 	font-family: sans-serif;
 	
 	/* :root Styles */
-	background-color: #2B2B2B;
+	background-color: var(--effective-background-color);
 }
 
 body {
@@ -20,10 +20,10 @@ body {
 
 body > #Background {
 	/* Background */
-	background-image: linear-gradient(#0005, #0005), url("background.png");
+	background-image: linear-gradient(#0005, #0005), url("background.png"), linear-gradient(#2B2B2B, #2B2B2B);
 	background-attachment: fixed;
 	background-position: 50% 0%;
-	background-repeat: no-repeat;
+	background-repeat: repeat, no-repeat, repeat;
 	
 	/* Layout */
 	position: fixed;
