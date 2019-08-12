@@ -37,6 +37,10 @@ section#Features > #FeatureTitle {
 	margin-bottom: 0;
 }
 
+section#Features > #FeatureListInfo {
+	margin-bottom: 50px;
+}
+
 section#Features > #FeatureList {
 	margin-bottom: 150px;
 }
