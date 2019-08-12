@@ -13,27 +13,27 @@
 			<div id="FeatureListInfo"><i>Click on an item to learn more...</i></div>
 			<div id="FeatureList">
 				<div>
-					<img class="icon" src="icons/Calculator.png" style="image-rendering: pixelated;"></img>
+					<img class="icon" src="icons/Calculator.png" style="image-rendering: pixelated; image-rendering: crisp-edges;"></img>
 					<div>Calculator</div>
 				</div>
 				<div>
-					<img class="icon" src="icons/Web%20Requests.png" style="image-rendering: pixelated;"></img>
+					<img class="icon" src="icons/Web%20Requests.png"></img>
 					<div>Web Requester</div>
 				</div>
 				<div>
-					<img class="icon" src="icons/Console.png" style="image-rendering: pixelated;"></img>
+					<img class="icon" src="icons/Console.png" style="image-rendering: pixelated; image-rendering: crisp-edges;"></img>
 					<div>Console</div>
 				</div>
 				<div>
-					<img class="icon" src="icons/Encryption.png" style="image-rendering: pixelated;"></img>
+					<img class="icon" src="icons/Encryption.png" style="image-rendering: pixelated; image-rendering: crisp-edges;"></img>
 					<div>Encrypter</div>
 				</div>
 				<div>
-					<img class="icon" src="icons/Todo%20List.png" style="image-rendering: pixelated;"></img>
+					<img class="icon" src="icons/Todo%20List.png" style="image-rendering: pixelated; image-rendering: crisp-edges;"></img>
 					<div>To Do List</div>
 				</div>
 				<div>
-					<img class="icon" src="icons/Modules.png" style="image-rendering: pixelated;"></img>
+					<img class="icon" src="icons/Modules.png" style="image-rendering: pixelated; image-rendering: crisp-edges;"></img>
 					<div>Modules</div>
 				</div>
 			</div>
