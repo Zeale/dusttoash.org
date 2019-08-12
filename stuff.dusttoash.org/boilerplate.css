@@ -1,105 +1,68 @@
 :root {
-	--theme-primary-color: black;
-	--background-color: #0009;
-	--foreground-color: white;
-	--theme-border-width: 3px;
-	--theme-border-style: solid;
-	--theme-border-color: var(--foreground-color);
-	--theme-border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
-  font-family: Verdana, Arial, sans-serif;
-  --stuff-passive-color: gold;
-  --stuff-active-color: red;
+	/* Inherited Styles */
+		/* Variables */
+		--passive-color: gold;
+		--active-color: red;
+		--effective-background-color: rgb(29.5098039218, 29.5098039218, 29.5098039218);
+	text-align: center;
+	color: var(--passive-color);
+	font-family: sans-serif;
+	
+	/* :root Styles */
+	background-color: var(--effective-background-color);
 }
 
 body {
-	background-color: #2B2B2B;
+	/* Body Styles */
+	overflow-x: hidden;
 	margin: 0;
 }
 
-a {
-  color: var(--stuff-passive-color);
-}
-
-a:hover {
-  color: var(--stuff-active-color);
-}
-
-#Background {
-	background-image: linear-gradient(#0005, #0005), url("background.png");
-	height: 100%;
-	width: 100%;
+body > #Background {
+	/* Background */
+	background-image: linear-gradient(#0005, #0005), url("background.png"), linear-gradient(#2B2B2B, #2B2B2B);
+	background-attachment: fixed;
+	background-position: 50% 0%;
+	background-repeat: repeat, no-repeat, repeat;
+	
+	/* Layout */
 	position: fixed;
 	top: 0;
+	right: 0;
+	bottom: 0;
 	left: 0;
-	filter: blur(2px);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	
+	/* Blur */
+	filter: blur(4px);
+	
+	/* Z Index */
 	z-index: -1;
 }
 
-#Header {
-  position: sticky;
-	width: 100%;
+body > #Header {
+	position: sticky;
 	top: 0;
-	left: 0;
-	
-	display: table;
-	table-layout: fixed;
-	
-	border-width: 0px 0px var(--theme-border-width) 0px;
-	border-style: var(--theme-border-style);
-	border-color: var(--theme-border-color)
-	
+	height: 100px;
 }
 
-#Header > span, .button {
-  cursor: pointer;
-	--trans-time = 0.4s;
-
-	transition: color var(--trans-time);
-	transition: background-color var(--trans-time);
-	transition: box-shadow var(--trans-time);
-  
-  color: var(--foreground-color);
-	background-color: var(--background-color);
-	box-shadow: none;
-
-	text-align: center;
+.button-element {
+	cursor: pointer;
+	border-style: solid;
+	border-width: 2px;
+	border-color: transparent transparent black black;
+	background-color: #3333;
+	font-family: consolas, monospace;
+	font-weight: bold;
+	transition: color 0.4s, background-color 0.4s;
+	transition-timing-function: ease-in;
+	text-decoration: none;
+	color: var(--passive-color);
 }
-
-#Header > span:hover, .button:hover {
-	color: var(--background-color);
-	background-color: var(--foreground-color);
-	box-shadow: 0 0 80px var(--foreground-color);
+.button-element:hover {
+	transition: initial;
+	color: var(--active-color);
+	background-color: #3335;
 }
-
-#Header > span {
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	
-	display: table-cell;
-	font-size: 2.4rem;
-}
-
-#Content {
-	text-align: center;
-	margin-top: 4em;
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-bottom: 4em;
-	padding: 2em;
-	color: white;
-	border: var(--theme-border);
-	background-color: var(--background-color);
-  box-shadow: 8px 8px 12px black;
-}
-
-.text-link {
-	text-decoration-style: dotted;
-	text-decoration-skip-ink: none;
-}
-
-.text-link:hover {
-	text-decoration-style: solid;
+.button-element:active {
+	border-color: black black transparent transparent;
 }

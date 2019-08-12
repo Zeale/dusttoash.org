@@ -1,7 +1,82 @@
-#Content {
-  position: relative;
-	left: calc(25% - 4em - var(--theme-border-width));
-	width: 50%;
-	margin-top: 17em;
-	padding: 2em;
+section#Introduction {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+section#Introduction > div#TitleDiv {
+	padding-top: 35px;
+}
+
+
+section#Introduction > div > h1#Title {
+	letter-spacing: 2px;
+	font-size: 3.2em;
+}
+
+section#Introduction > div#DownloadButton {
+	padding-top: 75px;
+}
+
+section#Introduction > div#DownloadButton > a {
+	padding: 15px 50px 20px 50px;
+	font-size: 1.3em;
+}
+
+#FreeWord {
+	text-shadow: 0px 0px 5px var(--passive-color);
+	animation: FREE-ANIMATION 1.2s linear 1s infinite alternate;
+}
+
+
+section#Features {
+	margin-top: 150px;
+}
+
+section#Features > #FeatureTitle {
+	font-size: 4em;
+	margin-bottom: 0;
+}
+
+section#Features > #FeatureListInfo {
+	margin-bottom: 50px;
+}
+
+section#Features > #FeatureList {
+	margin-bottom: 150px;
+}
+
+section#Features > div#FeatureList > div {
+	margin: 25px 25px 30px 25px;
+	padding: 50px 50px 0px 50px;
+	display: inline-block;
+	background-color: var(--effective-background-color);
+	box-shadow: 3px 3px 5px black;
+}
+
+section#Features > div#FeatureList > div > img.icon {
+	height: 128px;
+	width: auto;
+	margin-bottom: 10px;
+	transition: box-shadow 0.3s;
+}
+
+section#Features > div#FeatureList > div > div {
+	font-size: 1.4em;
+	font-family: monospace;
+	font-weight: bold;
+}
+
+section#Features > div#FeatureList > div div {
+	padding-bottom: 15px;
+	display: block;
+}
+
+section#Features > div#FeatureList > div:hover > img.icon {
+	box-shadow: 2px 2px 1.8px gold, -2px -2px 1.8px red;
+}
+
+
+@keyframes FREE-ANIMATION {
+	0% { text-shadow: 0px 0px 5px var(--passive-color); }
+	100% { text-shadow: 0px 0px 0px var(--passive-color); }
 }
