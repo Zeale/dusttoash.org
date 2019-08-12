@@ -1,5 +1,5 @@
 <?php
-function t($title=NULL, $header_links=array()) { if ($title===NULL)$title="Stuff";?><html>
+function t($title=NULL, $header_links=array(), $add_content=true) { if ($title===NULL)$title="Stuff";?><html>
 	<head>
 		<title><?php echo $title;?></title>
 		<link rel="stylesheet" type="text/css" href="/boilerplate.css">
@@ -8,8 +8,10 @@ function t($title=NULL, $header_links=array()) { if ($title===NULL)$title="Stuff
 	<body>
 		<div id="Background"></div>
 		<script type="text/javascript" src="/boilerplate.js"></script>
-		<div id="Header"></div>
-      <?php }
-  function b() { ?>
+		<div id="Header"></div><?php if($add_content):?>
+    <div id="Content"><?php endif; }
+  function b($add_content=true) { ?>
+  <?php if($add_content):?>
+    </div><?php endif;?>
 	</body>
 </html><?php }

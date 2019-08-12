@@ -1,4 +1,4 @@
-<?php t("Stuff", array("<link rel=\"stylesheet\" type=\"text/css\" href=\"/index.css\">"));?>
+<?php t("Stuff", array("<link rel=\"stylesheet\" type=\"text/css\" href=\"/index.css\">"), $add_content=false);?>
 		<section id="Introduction">
 			<div id="TitleDiv">
 				<h1 id="Title">Powerful, Usable,<br><span id="FreeWord">Free</span></h1>

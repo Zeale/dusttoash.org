@@ -45,6 +45,14 @@ body > #Header {
 	height: 100px;
 }
 
+body > div#Content {
+  margin: 0 15% 0 15%;
+}
+
+a {
+  color: red;
+}
+
 .button-element {
 	cursor: pointer;
 	border-style: solid;
