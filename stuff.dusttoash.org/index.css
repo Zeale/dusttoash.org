@@ -34,8 +34,8 @@ section#Features {
 
 section#Features > #FeatureTitle {
 	font-size: 4em;
+	margin-bottom: 0;
 }
-
 
 section#Features > #FeatureList {
 	margin-bottom: 150px;
