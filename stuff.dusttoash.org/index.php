@@ -1,13 +1,4 @@
-<html>
-	<head>
-		<title>Stuff</title>
-		<link rel="stylesheet" type="text/css" href="boilerplate.css">
-		<link rel="stylesheet" type="text/css" href="index.css">
-	</head>
-	<body>
-		<div id="Background"></div>
-		<script type="text/javascript" src="boilerplate.js"></script>
-		<div id="Header"></div>
+<?php t("Stuff", array("<link rel=\"stylesheet\" type=\"text/css\" href=\"/index.css\">"));?>
 		<section id="Introduction">
 			<div id="TitleDiv">
 				<h1 id="Title">Powerful, Usable,<br><span id="FreeWord">Free</span></h1>
@@ -50,6 +41,4 @@
 		<section id="Reviews">
 			<div>
 			</div>
-		</section>
-	</body>
-</html>
+		</section><?php b();?>
